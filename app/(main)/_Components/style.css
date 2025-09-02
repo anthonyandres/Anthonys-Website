@@ -1,0 +1,85 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap'); */
+@font-face {
+  font-family: gelica;
+  src: url('../../../public/Fonts/Gelica/Gelica-Regular.otf') format('otf');
+  font-family: gelicaBold;
+  src: url('../../../public/Fonts/Gelica/Gelica-Bold.otf') format('otf');
+  font-family: cabinetGrotesk;
+  src: url('../../../public/Fonts/CabinetGrotesk/CabinetGrotesk-Medium.otf') format('otf');
+  font-family: cabinetGroteskBold;
+  src: url('../../../public/Fonts/CabinetGrotesk/CabinetGrotesk-Extrabold.otf') format('otf');
+}
+
+.landingWindow {
+    overflow: auto;
+    border-radius: 0px;
+    border-color: rgba(116, 116, 116, 0.959);
+    /* border-width: 2px; */
+    background: #fff9d6;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.landing-header {
+    font-family: cabinetGrotesk;
+    background: #414141;
+    border-bottom-color: rgba(116, 116, 116, 0.959);
+    border-bottom-width: 3px;
+    /* position: flex; */
+    align-items: center;
+    top: 0;
+    right: 0;
+    width:100%;
+    height: 50px;
+    padding: 0 0 0 0; /*top right bottom left */
+}
+
+.centered {
+    height: 100vh; /* Magic here */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    font-family: 'gelica';
+    color: #414141;
+    /* height: 43%; */
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+
+.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+h1{
+    font-size: 80px;
+    text-align: center;
+    align-self:flex;
+}
+
+h1+h1 {
+  margin-left: 20px;
+}
+
+.foot{
+  font-family: 'cabinetGrotesk';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #aca191;
+}
+
+.inline-flex-center{
+  /* inline-flex justify-center items-center */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+}
