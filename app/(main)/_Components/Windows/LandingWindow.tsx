@@ -56,7 +56,7 @@ function LandingWindow({showAbout = () => {}, showLinks = () => {}, showWork = (
           
 
           <div className='window-colors border-0 w-[80%] min-w-[400px] grid grid-cols-5'>
-            <IconContext.Provider value={{ className: 'window-colors border-0 size-[60%] transition duration-100 ease-in hover:scale-[110%]' }}>
+            <IconContext.Provider value={{ className: 'border-0 size-[60%] transition duration-100 ease-in hover:scale-[110%]' }}>
               <div className='border-0 inline-flex-center'>
                 <p className='text-2xl'>about </p>
                 <FaCameraRetro onClick={showAbout}/>   
