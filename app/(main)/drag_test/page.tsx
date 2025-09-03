@@ -1,18 +1,20 @@
 'use client'
 import React, { useRef, useState } from 'react'
 import Card from '../_Components/Card'
-import LandingWindow from '../_Components/LandingWindow/LandingWindow'
+import LandingWindow from '../_Components/Windows/LandingWindow'
 import ComponentCard from '../_Components/ComponentCard'
 import "../../globals.css"
 import { motion, AnimatePresence, easeIn } from 'framer-motion'
-import AboutWindow from '../_Components/Windows/AboutWindow/AboutWindow'
-import LinksWindow from '../_Components/Windows/LinksWindow/LinksWindow'
-import WorkWindow from '../_Components/Windows/WorkWindow/WorkWindow'
-import BlogWindow from '../_Components/Windows/BlogWindow/BlogWindow'
-import ContactWindow from '../_Components/Windows/ContactWindow/ContactWindow'
+import AboutWindow from '../_Components/Windows/AboutWindow'
+import LinksWindow from '../_Components/Windows/LinksWindow'
+import WorkWindow from '../_Components/Windows/WorkWindow'
+import BlogWindow from '../_Components/Windows/BlogWindow'
+import ContactWindow from '../_Components/Windows/ContactWindow'
 import Footer from '../_Components/Footer'
 import { Howl, Howler } from 'howler'
 import localFont from 'next/font/local'
+import { FaMoon, FaSun, FaVolumeHigh, FaVolumeXmark } from 'react-icons/fa6'
+import { IconContext } from 'react-icons'
 
 const gelica = localFont({
   src: '../../../public/Fonts/Gelica/Gelica-Regular.otf',
@@ -30,13 +32,13 @@ function page() {
   const containerRef = useRef<null>(null)
   const cmbRef = useRef<null>(null)
   const ref3 = useRef(null)
-  const parentRef = useRef(null)
-  const childRef = useRef(null)
   const [showAbout, setShowAbout] = useState(false)
   const [showBlog, setShowBlog] = useState(false)
   const [showContact, setShowContact] = useState(false)
   const [showLinks, setShowLinks] = useState(false)
   const [showWork, setShowWork] = useState(false)
+  const [isMute, setIsMute] = useState(false)
+  const [isDark, setIsDark] = useState(false)
   const [zIndex, setZIndex] = useState(1)
 
   //Howler.mute(false) //all global methods are called using `Howler`
@@ -48,6 +50,18 @@ function page() {
     src: ['./sounds/zoomOut.wav'],
     volume: 0.5
   })
+  const soundOn = new Howl({
+    src: ['./sounds/soundOn.wav'],
+    volume: 0.5
+  })
+  const light = new Howl({
+    src: ['./sounds/UI_Day.wav'],
+    volume: 0.5
+  })
+  const dark = new Howl({
+    src: ['./sounds/UI_Night.wav'],
+    volume: 0.5
+  })
   //const {Howl, Howler} = require('howler')
 
   function onShowAboutClick(){if(!showAbout){setShowAbout(true); zoomIn.play()}else{setShowAbout(false); zoomOut.play()}} // function to handle logic if window(s) are shown or not. Yes its one line, i know
@@ -56,57 +70,63 @@ function page() {
   function onShowLinksClick(){if(!showLinks){setShowLinks(true); zoomIn.play()}else{setShowLinks(false); zoomOut.play()}}
   function onShowWorkClick(){if(!showWork){setShowWork(true); zoomIn.play()}else{setShowWork(false); zoomOut.play()}}
 
-  function updateZIndex(){
-        const els = document.querySelectorAll('.drag-handle')
-        let maxZindex = 1
+  function onMuteSoundClick(){if(!isMute){setIsMute(true);  Howler.mute(true)}else{setIsMute(false); soundOn.play(); Howler.mute(false)}}
+  function onDarkModeClick(){if(!isDark){setIsDark(true);  dark.play()}else{setIsDark(false); light.play();}}
 
-        els.forEach((el) => {
-          
-            let zIndex = parseInt(window.getComputedStyle(el).getPropertyValue("z-index"))
-            if(!isNaN(zIndex) && (zIndex > maxZindex)){
-            maxZindex = zIndex
-            }
-        })
-
-        setZIndex(maxZindex + 1)
-        console.log(zIndex)
-    }
-
-
+  // function updateZIndex(){
+  //   const els = document.querySelectorAll('.drag-handle')
+  //   let maxZindex = 1
+  //   els.forEach((el) => {
+  //       let zIndex = parseInt(window.getComputedStyle(el).getPropertyValue("z-index"))
+  //       if(!isNaN(zIndex) && (zIndex > maxZindex)){
+  //         maxZindex = zIndex
+  //       }
+  //   })
+  //   setZIndex(maxZindex + 1)
+  //   console.log(zIndex)
+  // }
 
     // <div className='hidden md:inline'> means that when the window is larger than 768 pixels
     return(
-      <main ref={ref3} className='h-dvh overflow-hidden'>
-        <div className='absolute -z-100 text-[#]'>
-          <p>
-            
-          </p>
-        </div>
+      <main ref={ref3} className='main-bg-colors h-dvh overflow-hidden' data-theme={isDark ? 'dark' : 'light'}>
+        <IconContext.Provider value={{ className: 'tertiary-window-colors border-0 size-10 transition duration-100 ease-in hover:scale-[110%] ml-7 mt-4' }}>
+          <div className='absolute ml-14'>
+            {!isDark && <FaSun onClick={onDarkModeClick}/>}
+          </div>
+          <div className='absolute ml-14'>
+            {isDark && <FaMoon onClick={onDarkModeClick}/>}
+          </div>
+          <div className='absolute'>
+            {!isMute && <FaVolumeHigh onClick={onMuteSoundClick}/>}
+          </div>
+          <div className='absolute'>
+            {isMute && <FaVolumeXmark onClick={onMuteSoundClick}/>}
+          </div>
+        </IconContext.Provider>
         <div className='hidden md:inline overflow-hidden'>
-
-          <div ref={containerRef} className='drag-handle imageCardContainer' style={{zIndex: 1}}>
-            <div style={{ translate: '0px -250px', zIndex}} className='drag-handle' onMouseDown={updateZIndex}>
+          <div ref={containerRef} className='drag-handle imageCardContainer'>
+            <div style={{ translate: '0px -250px', zIndex}}>
               <Card boundingRef={containerRef} imgSrc='./anthony2.jpg' />
             </div>
           </div>
 
 
-          <div ref={containerRef} className='drag-handle imageCardContainer' style={{zIndex: 1}}>
-            <div style={{ translate: '0px -250px', zIndex}} className='drag-handle' onMouseDown={updateZIndex}>
+          <div ref={containerRef} className='drag-handle imageCardContainer'>
+            <div style={{ translate: '0px -250px', zIndex}}>
               <Card boundingRef={containerRef} imgSrc='./anthony3.jpg' />
             </div>
           </div>
           
           
-          <div ref={containerRef} className='drag-handle imageCardContainer' style={{zIndex: 1}}>
-            <div style={{ translate: '0px -250px', zIndex}}className='drag-handle' onMouseDown={updateZIndex}>
+          <div ref={containerRef} className='drag-handle imageCardContainer'>
+            <div style={{ translate: '0px -250px', zIndex}}>
               <Card boundingRef={containerRef} imgSrc='./anthony4.jpg' />
             </div>
           </div>
           
           
-          <div ref={containerRef} className='drag-handle imageCardContainer' style={{zIndex: 1}}>
-            <div style={{ translate: '0px -250px', zIndex}} className='drag-handle' onMouseDown={updateZIndex}>
+          <div ref={containerRef} className='drag-handle imageCardContainer'>
+            <div style={{ translate: '0px -250px', zIndex}}>
               <Card boundingRef={containerRef} imgSrc='./anthony.jpg' />
             </div>
           </div>

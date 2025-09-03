@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import '../style.css'
+import './windows.css'
 import { IconContext } from 'react-icons'
 import {FaDAndD, FaGithub, FaLinkedin, FaMinimize, FaNewspaper, FaPalette, FaSquareInstagram, FaYoutube } from 'react-icons/fa6'
 import { MdLibraryMusic } from "react-icons/md"
@@ -7,7 +7,7 @@ import localFont from 'next/font/local'
 import { Howl } from 'howler'
 
 const gelica = localFont({
-  src: '../../../../../public/Fonts/Gelica/Gelica-Regular.otf',
+  src: '../../../../public/Fonts/Gelica/Gelica-Regular.otf',
 })
 
 interface Props{
@@ -30,18 +30,18 @@ function LinksWindow({showLinks = () => {}}: Props) {
 }
 
   return (
-    <div className='prevent-select h-[100%] w-[20vw] min-w-150 max-w-[960px] border-0 rounded-[0px]'>
-        <IconContext.Provider value={{ color: '#fef3c6', className: 'justify-right border-0 size-[20px] transition duration-100 ease-in hover:scale-[110%]' }}>
-                <div className='z-10 absolute gap-x-16 justify-center top-3 right-3'>
-                    <FaMinimize onClick={showLinks}/>
-                </div>
-                </IconContext.Provider>
-        <div className='flex flex-col gap-y-0 window'>
-            <div className='flex flex-row landing-header text-amber-100 p-20'>
+    <div className='window-colors prevent-select h-[100%] w-[20vw] min-w-150 max-w-[960px] border-0 rounded-[0px]'>
+        <IconContext.Provider value={{ className: 'tertiary-window-colors justify-right border-0 size-[20px] transition duration-100 ease-in hover:scale-[110%]' }}>
+        <div className='z-10 absolute gap-x-16 justify-center top-3 right-3'>
+            <FaMinimize onClick={showLinks}/>
+        </div>
+        </IconContext.Provider>
+        <div className='flex flex-col gap-y-0 h-full'>
+            <div className='tertiary-window-colors flex flex-row landing-header text-amber-100 p-20'>
                 <p className='pl-6 text-2xl text-center'>links</p>
             </div>
-            <div className={`landingWindow text-[#4a4a4a] overflow-hidden border-0 grid text-xl grid-cols-3 h-full p-7 ${gelica.className}`}>
-                 <IconContext.Provider value={{ color: '#4a4a4a', className: 'border-0 size-[70px] transition duration-100 ease-in hover:scale-[110%]' }}>
+            <div className={`window-colors overflow-hidden border-0 grid text-xl grid-cols-3 h-full p-7 ${gelica.className}`}>
+                 <IconContext.Provider value={{ className: 'border-0 size-[70px] transition duration-100 ease-in hover:scale-[110%]' }}>
                 <div className='border-0 inline-flex-center'>
                     <p className=''>Github </p>
                     <FaGithub onClick={()=>openInNewTab('https://github.com/anthonyandres')}/>    

@@ -2,8 +2,6 @@
 import React, {useRef, useState} from 'react';
 import Link from "next/link";
 import Card from './(main)/_Components/Card';
-import { ArcCard } from './(main)/_Components/arc-card';
-import TiltCard from './(main)/_Components/TiltCard';
 
 // TODO: begin working on implementing ways to hide and show various elements on main page (like that one website that looks like a desktop and you're opening windows when clicking certain )
 

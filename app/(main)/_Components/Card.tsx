@@ -23,12 +23,17 @@ function Card({boundingRef, imgSrc}: PropsWithChildren<Props>) { // 'Card' takes
         volume: 0.3
     })
     const cardUp = new Howl({
-        src: ['./sounds/CARD_UP_08.wav'],
-        volume: 0.05
+        src: ['./sounds/Card_Drag.wav'],
+        volume: 0.3
     })
     const cardDown = new Howl({
         src: ['./sounds/CARD_PLACE_01.wav'],
         volume: 0.3
+    })
+
+    const cardSound = new Howl({
+        src: ['./sounds/Card_on_Card_8.wav' ],
+        volume: 0.5
     })
 
     const rotate = useTransform( // use the dampened speed values and map them to workable values for rotation (I don't want the card to rotate 16000 degrees if I move it so I map it to 70 degrees in either direction)
@@ -71,9 +76,14 @@ function Card({boundingRef, imgSrc}: PropsWithChildren<Props>) { // 'Card' takes
         //cardHover.play()
 
     }
+
+
+
     const handleDrag = () => {
         cardUp.play()
-
+    }
+    const handleDragEnd = () => {
+        cardSound.play()
     }
 
     const springScale = useSpring(1, {stiffness: 4000, damping: 30});
@@ -111,7 +121,8 @@ function Card({boundingRef, imgSrc}: PropsWithChildren<Props>) { // 'Card' takes
             onMouseLeave={handleMouseLeave}                                             //  when mouse leaves element, call this function
             //onMouseDown={updateZIndex}
             onHoverStart={handleHoverStart}
-            onDragStart={handleDrag}                                           
+            onDragStart={handleDrag}
+            onDragEnd={handleDragEnd}                                           
             style={{
                     //boxShadow: "5px 5px 0px rgba(0, 0, 0, 0.466)",
                     border: '2px solid #747474f5',
