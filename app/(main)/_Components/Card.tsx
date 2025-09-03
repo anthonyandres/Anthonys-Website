@@ -11,25 +11,24 @@ interface Props {
 }
 
 const angle = 10 // set the "angle" of tile, higher is more crazy
-const sheenSize = 1000 // set the size of the sheen
 
 function Card({boundingRef, imgSrc}: PropsWithChildren<Props>) { // 'Card' takes a reference to a DivElement, and uses that as a bounds
     const x = useMotionValue(0)
     const xVelocity = useVelocity(x) // calculate the change in position of the x axis
     const xVelSpring = useSpring(xVelocity, {stiffness: 1000,
                                              damping: 30}) // dampen any acceleration
-    const cardHover = new Howl({
-        src: ['./sounds/CARD_TAP_01.wav'],
-        volume: 0.3
-    })
+    // const cardHover = new Howl({
+    //     src: ['./sounds/CARD_TAP_01.wav'],
+    //     volume: 0.3
+    // })
     const cardUp = new Howl({
         src: ['./sounds/Card_Drag.wav'],
         volume: 0.3
     })
-    const cardDown = new Howl({
-        src: ['./sounds/CARD_PLACE_01.wav'],
-        volume: 0.3
-    })
+    // const cardDown = new Howl({
+    //     src: ['./sounds/CARD_PLACE_01.wav'],
+    //     volume: 0.3
+    // })
 
     const cardSound = new Howl({
         src: ['./sounds/Card_on_Card_8.wav' ],
@@ -49,7 +48,7 @@ function Card({boundingRef, imgSrc}: PropsWithChildren<Props>) { // 'Card' takes
 
 
     const handleMouseMove = (e: any) => {// calculate various measurements in order to obtain the x/y rotational values for tilting
-        console.log('mouse move!')
+        //console.log('mouse move!')
         const rect = e.target.getBoundingClientRect();
 
         const width = rect.width;

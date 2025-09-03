@@ -4,7 +4,7 @@ import Card from '../_Components/Card'
 import LandingWindow from '../_Components/Windows/LandingWindow'
 import ComponentCard from '../_Components/ComponentCard'
 import "../../globals.css"
-import { motion, AnimatePresence, easeIn } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import AboutWindow from '../_Components/Windows/AboutWindow'
 import LinksWindow from '../_Components/Windows/LinksWindow'
 import WorkWindow from '../_Components/Windows/WorkWindow'
@@ -12,23 +12,10 @@ import BlogWindow from '../_Components/Windows/BlogWindow'
 import ContactWindow from '../_Components/Windows/ContactWindow'
 import Footer from '../_Components/Footer'
 import { Howl, Howler } from 'howler'
-import localFont from 'next/font/local'
 import { FaMoon, FaSun, FaVolumeHigh, FaVolumeXmark } from 'react-icons/fa6'
 import { IconContext } from 'react-icons'
 
-const gelica = localFont({
-  src: '../../../public/Fonts/Gelica/Gelica-Regular.otf',
-})
-
-const windowAnimation = { //object defining windowAnimation
-  key: 'window',
-  initial:{y:'50%', opacity: 0, scale: 0.5},
-  exit:{y:'50%', opacity: 0, scale: 0.5, transition: {duration: 0.5, ease: 'easeOut'}},
-  animate:{y: 0, opacity: 1, scale: 1},
-  transition:{duration: 0.1, ease: 'easeOut'},
-} 
-
-function page() {
+function Page() {
   const containerRef = useRef<null>(null)
   const cmbRef = useRef<null>(null)
   const ref3 = useRef(null)
@@ -39,7 +26,6 @@ function page() {
   const [showWork, setShowWork] = useState(false)
   const [isMute, setIsMute] = useState(false)
   const [isDark, setIsDark] = useState(false)
-  const [zIndex, setZIndex] = useState(1)
 
   //Howler.mute(false) //all global methods are called using `Howler`
   const zoomIn = new Howl({
@@ -105,28 +91,28 @@ function page() {
         </IconContext.Provider>
         <div className='hidden md:inline overflow-hidden'>
           <div ref={containerRef} className='drag-handle imageCardContainer'>
-            <div style={{ translate: '0px -250px', zIndex}}>
+            <div style={{ translate: '0px -250px'}}>
               <Card boundingRef={containerRef} imgSrc='./anthony2.jpg' />
             </div>
           </div>
 
 
           <div ref={containerRef} className='drag-handle imageCardContainer'>
-            <div style={{ translate: '0px -250px', zIndex}}>
+            <div style={{ translate: '0px -250px'}}>
               <Card boundingRef={containerRef} imgSrc='./anthony3.jpg' />
             </div>
           </div>
           
           
           <div ref={containerRef} className='drag-handle imageCardContainer'>
-            <div style={{ translate: '0px -250px', zIndex}}>
+            <div style={{ translate: '0px -250px'}}>
               <Card boundingRef={containerRef} imgSrc='./anthony4.jpg' />
             </div>
           </div>
           
           
           <div ref={containerRef} className='drag-handle imageCardContainer'>
-            <div style={{ translate: '0px -250px', zIndex}}>
+            <div style={{ translate: '0px -250px'}}>
               <Card boundingRef={containerRef} imgSrc='./anthony.jpg' />
             </div>
           </div>
@@ -219,6 +205,6 @@ function page() {
   )
 }
 
-export default page
+export default Page
 
 //YOU CAN USE md:w-56 to set the width to 768px on medium screens. use `md:`

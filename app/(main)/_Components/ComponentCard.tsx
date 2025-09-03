@@ -9,8 +9,6 @@ interface Props {
     height: number;
 }
 
-const angle = 10 // set the "angle" of tile, higher is more crazy
-const sheenSize = 1000 // set the size of the sheen
 
 function ComponentCard({boundingRef, height, children}: PropsWithChildren<Props>) { // 'Card' takes a reference to a DivElement, and uses that as a bounds
     const dragControls = useDragControls()
@@ -28,8 +26,6 @@ function ComponentCard({boundingRef, height, children}: PropsWithChildren<Props>
         [-5, 0, 5],
         {clamp: true} // the upper and lower maximums for rotation values are -70 and 70 degrees rather than rotation -70 and 70 perpetually
     )
-    const x2 = useSpring(0, {stiffness: 400})
-    const y2 = useSpring(0, {stiffness: 400})
 
 
     const springScale = useSpring(1, {stiffness: 4000, damping: 30});
@@ -39,7 +35,7 @@ function ComponentCard({boundingRef, height, children}: PropsWithChildren<Props>
         let maxZindex = -100
 
         els.forEach((el) => {
-            let zIndex = parseInt(window.getComputedStyle(el).getPropertyValue('z-index'))
+            const zIndex = parseInt(window.getComputedStyle(el).getPropertyValue('z-index'))
 
             if(!isNaN(zIndex) && zIndex > maxZindex){
             maxZindex = zIndex
@@ -111,7 +107,3 @@ function ComponentCard({boundingRef, height, children}: PropsWithChildren<Props>
 }
 
 export default ComponentCard
-
-function componentDidMount(this: any) {
-    return this.childComponent.getDimensions()
-}

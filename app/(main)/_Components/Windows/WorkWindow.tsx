@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import './windows.css'
 import { IconContext } from 'react-icons'
 import {FaMinimize } from 'react-icons/fa6'
@@ -9,7 +9,6 @@ interface Props{
 
 
 function WorkWindow({showWork = () => {}}: Props) {
-    const containerRef = useRef<null>(null)
 
   return (
     <div className='window-colors prevent-select h-[100%] w-[40vw] min-w-150 max-w-[960px] border-0 rounded-[0px]'>

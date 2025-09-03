@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import './windows.css'
 import { IconContext } from 'react-icons'
 import {FaMinimize } from 'react-icons/fa6'
@@ -9,7 +9,6 @@ interface Props{
 
 
 function LinksWindow({showBlog = () => {}}: Props) {
-    const containerRef = useRef<null>(null)
 
   return (
     <div className='window-colors prevent-select h-[100%] w-[20vw] min-w-[300px] max-w-[300px] border-0 rounded-[0px]'>

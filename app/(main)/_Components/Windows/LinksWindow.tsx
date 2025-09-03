@@ -1,7 +1,7 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import './windows.css'
 import { IconContext } from 'react-icons'
-import {FaDAndD, FaGithub, FaLinkedin, FaMinimize, FaNewspaper, FaPalette, FaSquareInstagram, FaYoutube } from 'react-icons/fa6'
+import {FaGithub, FaLinkedin, FaMinimize, FaPalette, FaSquareInstagram, FaYoutube } from 'react-icons/fa6'
 import { MdLibraryMusic } from "react-icons/md"
 import localFont from 'next/font/local'
 import { Howl } from 'howler'
@@ -21,7 +21,6 @@ const press = new Howl({
 
 
 function LinksWindow({showLinks = () => {}}: Props) {
-    const containerRef = useRef<null>(null)
 
     const openInNewTab = (url:string) => {
         press.play()

@@ -1,11 +1,7 @@
 import React from 'react'
 import './windows.css'
-import useMeasure, { RectReadOnly } from 'react-use-measure'
-import { FaAmazon, FaBook, FaCameraRetro, FaCode, FaEnvelopeOpenText, FaLink, FaLinkedin  } from "react-icons/fa6"
+import { FaBook, FaCameraRetro, FaCode, FaEnvelopeOpenText, FaLink } from "react-icons/fa6"
 import { IconContext } from "react-icons"
-import Link from 'next/link'
-import { log } from 'console'
-import localFont from 'next/font/local'
 
 // const gelica = localFont({
 //   src: '../../../../public/Fonts/Gelica/Gelica-Regular.otf',
@@ -22,17 +18,7 @@ interface Props{
 
 
 function LandingWindow({showAbout = () => {}, showLinks = () => {}, showWork = () => {}, showBlog = () => {}, showContact = () => {}}: Props) {
-  //const windowClassname = 'border-8 w-[200px] h-[300px]'
 
-  // function getDimensions():RectReadOnly{ // return a RectReadOnly object that contains readonly variables containing x, y, width, height, top, right, bottom, and left parameters of this object
-  //   const [ref, bounds] = useMeasure()
-  //   return bounds
-  // }
-
-  // function hideShow(){
-  //   // hide/show windows when this function is called
-  //   alert('hello')
-  // }
                                                             //vvv the width here dictates the width of the parent (ComponentCard)
   return (
     <div className='window-colors prevent-select h-[100%] w-[50vw] min-w-150 max-w-[960px] border-0 rounded-[0px]'>
@@ -45,7 +31,7 @@ function LandingWindow({showAbout = () => {}, showLinks = () => {}, showWork = (
         <div className='flex border-0 overflow-hidden content flex-col gap-y-10 min-h-111 p-20 '>
           <div className='window-colors border-0 justify-center items-center w-[100%] flex flex-col'>
             <div className='border-0 justify-center flex min-w-[150px] w-[100%]' data-theme=''>
-              <h2 className='text-[500%] text-center'>hey, i'm <span className='secondary-window-colors'>anthony</span></h2>
+              <h2 className='text-[500%] text-center'>hey, i&apos;m <span className='secondary-window-colors'>anthony</span></h2>
             </div>
             
             <div className=' border-0 w-[100%] min-w-[150px] justify-center flex -translate-y-0'>

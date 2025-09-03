@@ -1,5 +1,5 @@
 'use client';
-import React, {useRef, useState} from 'react';
+import React, {useRef} from 'react';
 import Link from "next/link";
 import Card from './(main)/_Components/Card';
 
@@ -8,7 +8,6 @@ import Card from './(main)/_Components/Card';
 export default function Home() {
 
   const containerRef = useRef<null>(null); // create a reference to a div element
-  const boundingRef = useRef<null>(null);
   return (
       <main>
         <span className='noScroll border-8 flex-col inline-block'>

@@ -1,11 +1,9 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import './windows.css'
 import { IconContext } from 'react-icons'
 import {FaMinimize } from 'react-icons/fa6'
-import Card from '../Card'
 import TiltCard from '../TiltCard'
 import localFont from 'next/font/local'
-import { getImplicitTags } from 'next/dist/server/lib/implicit-tags'
 
 
 const gelica = localFont({
@@ -32,7 +30,6 @@ interface Props{
 
 function AboutWindow({showAbout = () => {}}: Props) {
     const containerRef = useRef<null>(null)
-    const [showCount, setShowCount] = useState(false)
 
   return (
     <div className='window-colors prevent-select h-full w-[50vw] min-w-150 max-w-[960px] border-0 rounded-[0px]'>
@@ -63,7 +60,7 @@ function AboutWindow({showAbout = () => {}}: Props) {
                     <div className='border-0 grid gap-20 grid-rows-2 grid-cols-1 w-full h-full'>
                         <div className='border-0 w-full h-full flex flex-col justify-center scale-90'>
                             <div className='border-0 z-1 translate-y-25 flex justify-center'>
-                                <TiltCard boundingRef={containerRef} imgSrc='./anthony.jpg' />
+                                <TiltCard imgSrc='./anthony.jpg' />
                             </div>
 
                             <div className='window-colors border-0 h-min z-0 translate-y-60'>

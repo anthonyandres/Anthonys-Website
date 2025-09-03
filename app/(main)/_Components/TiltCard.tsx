@@ -1,20 +1,16 @@
 //'use client'
 
-import React, { PropsWithChildren, RefObject, useState } from 'react'
+import React, { PropsWithChildren } from 'react'
 import { motion, useMotionValue, useSpring, useTransform, useVelocity } from 'framer-motion'
 import { Howl } from 'howler'
 
 interface Props {
-    boundingRef: RefObject<null> | undefined;
     imgSrc: string
 }
 
 const angle = 12 // set the "angle" of tile, higher is more crazy
-const sheenSize = 1000 // set the size of the sheen
 
-function TiltCard({boundingRef, imgSrc}: PropsWithChildren<Props>) { // 'Card' takes a reference to a DivElement, and uses that as a bounds
-    //const bound: RefObject<'div'> = boundingRef.current
-    const [zIndex, setZIndex] = useState(0)
+function TiltCard({imgSrc}: PropsWithChildren<Props>) { // 'Card' takes a reference to a DivElement, and uses that as a bounds
     const x = useMotionValue(0)
     const xVelocity = useVelocity(x) // calculate the change in position of the x axis
     const xVelSpring = useSpring(xVelocity, {stiffness: 1000, damping: 30}) // dampen any acceleration
@@ -31,9 +27,6 @@ function TiltCard({boundingRef, imgSrc}: PropsWithChildren<Props>) { // 'Card' t
     const rotateX = useTransform(y2, [-0.5, 0.5], [`${angle}deg`, `-${angle}deg`]) //handleMouseMove() determines x2 and y2, which are used here to calculate tilt
     const rotateY = useTransform(x2, [-0.5, 0.5], [`-${angle}deg`, `${angle}deg`])
 
-    // const mouseXPos = useSpring(0, {bounce: 0})
-    // const mouseYPos = useSpring(0, {bounce: 0})
-
     const handleMouseMove = (e: any) => {// calculate various measurements in order to obtain the x/y rotational values for tilting
         console.log('mouse move!')
         const rect = e.target.getBoundingClientRect();
@@ -49,8 +42,6 @@ function TiltCard({boundingRef, imgSrc}: PropsWithChildren<Props>) { // 'Card' t
 
         x2.set(xPercent);
         y2.set(yPercent);
-        // mouseXPos.set(mouseX - sheenSize / 2)
-        // mouseYPos.set(mouseY - sheenSize / 2)
     }
 
     
@@ -95,7 +86,6 @@ function TiltCard({boundingRef, imgSrc}: PropsWithChildren<Props>) { // 'Card' t
 
     return(
         <main   style={{
-                    zIndex,
                     perspective: 800, 
                     //border: '5px solid black', //uncomment this to see where the cards spawn. The black box prevents layers from interacting with each other
                     height: '0',
@@ -146,18 +136,6 @@ function TiltCard({boundingRef, imgSrc}: PropsWithChildren<Props>) { // 'Card' t
                     //transformOrigin: "50% 25%"
                     }} // set rotation point to upper middle area
             >
-
-            {/*TODO: sheen is laggy and only works after reloading test page FIX IT OR GET RID OF IT (but prob get rid of it)*/}
-            {/* <motion.div    
-                className='absolute z-10 opacity-0 group-hover:opacity-30 transition-opacity duration-200 rounded-full blur-md'
-                style={{
-                    background: 'radial-gradient(white, #3984ff00 80%',
-                    left: mouseXPos,
-                    top: mouseYPos,
-                    height: sheenSize,                        
-                    width: sheenSize,
-                }}  
-            /> */}
             
             <img style={{   
                             scale: '1.1', 
