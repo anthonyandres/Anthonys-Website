@@ -1,5 +1,5 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap'); */
-@font-face {
+/* @font-face {
   font-family: gelica;
   src: url('../../../public/Fonts/Gelica/Gelica-Regular.otf') format('otf');
   font-family: gelicaBold;
@@ -8,7 +8,7 @@
   src: url('../../../public/Fonts/CabinetGrotesk/CabinetGrotesk-Medium.otf') format('otf');
   font-family: cabinetGroteskBold;
   src: url('../../../public/Fonts/CabinetGrotesk/CabinetGrotesk-Extrabold.otf') format('otf');
-}
+} */
 
 .centered {
     height: 100vh; /* Magic here */

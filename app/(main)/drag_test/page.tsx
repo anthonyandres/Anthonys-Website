@@ -48,7 +48,6 @@ function Page() {
     src: ['./sounds/UI_Night.wav'],
     volume: 0.5
   })
-  //const {Howl, Howler} = require('howler')
 
   function onShowAboutClick(){if(!showAbout){setShowAbout(true); zoomIn.play()}else{setShowAbout(false); zoomOut.play()}} // function to handle logic if window(s) are shown or not. Yes its one line, i know
   function onShowBlogClick(){if(!showBlog){setShowBlog(true); zoomIn.play()}else{setShowBlog(false); zoomOut.play()}}
@@ -130,7 +129,7 @@ function Page() {
               <div className='absolute z-2'>
                 <AnimatePresence>
                   {showAbout &&
-                    <motion.div className='border-0' style={{ translate: '-450px -220px'}} key={'aboutWindow'} initial={{y:'50%', opacity: 0, scale: 0.5}} exit={{y:'50%', opacity: 0, scale: 0.5, transition: {duration: 0.1, ease: 'easeOut'}}} animate={{y: 0, opacity: 1, scale: 1}} transition={{duration: 0.2, ease: 'easeOut'}}>
+                    <motion.div className='border-0' style={{ translate: '-450px -180px'}} key={'aboutWindow'} initial={{y:'50%', opacity: 0, scale: 0.5}} exit={{y:'50%', opacity: 0, scale: 0.5, transition: {duration: 0.1, ease: 'easeOut'}}} animate={{y: 0, opacity: 1, scale: 1}} transition={{duration: 0.2, ease: 'easeOut'}}>
                       <ComponentCard height={50} boundingRef={ref3}>
                         <AboutWindow showAbout={onShowAboutClick}></AboutWindow>
                       </ComponentCard>
@@ -182,7 +181,7 @@ function Page() {
               <div className='absolute z-2'>
                 <AnimatePresence>
                   {showContact &&
-                    <motion.div className='border-0' style={{ translate: '650px 180px'}} key={'contactWindow'} initial={{y:'50%', opacity: 0, scale: 0.5}} exit={{y:'50%', opacity: 0, scale: 0.5, transition: {duration: 0.1, ease: 'easeOut'}}} animate={{y: 0, opacity: 1, scale: 1}} transition={{duration: 0.2, ease: 'easeOut'}}>
+                    <motion.div className='border-0' style={{ translate: '620px 170px'}} key={'contactWindow'} initial={{y:'50%', opacity: 0, scale: 0.5}} exit={{y:'50%', opacity: 0, scale: 0.5, transition: {duration: 0.1, ease: 'easeOut'}}} animate={{y: 0, opacity: 1, scale: 1}} transition={{duration: 0.2, ease: 'easeOut'}}>
                       <ComponentCard height={60} boundingRef={ref3}>
                         <ContactWindow showContact={onShowContactClick}></ContactWindow>
                       </ComponentCard>
@@ -198,8 +197,8 @@ function Page() {
         </div>
 
 
-        <div className='inline md:hidden'>
-          TODO: add sliding windows and mini layout like shar, she da goat
+        <div className='flex justify-center items-center h-full md:hidden'>
+          TODO: add mobile layout here (if you see this, you owe me 5 Canadian Dollars)
         </div>
       </main>
   )

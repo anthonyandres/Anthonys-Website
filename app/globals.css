@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
-@font-face {
+/* @font-face {
   font-family: gelica;
   src: url('../public/Fonts/Gelica/Gelica-Regular.otf');
   font-family: cabinetGrotesk;
   src: url('../public/Fonts/CabinetGrotesk/CabinetGrotesk-Medium.otf')
-}
+} */
 
 :root {
   /* Background Colors: */

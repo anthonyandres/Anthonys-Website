@@ -7,16 +7,7 @@ import localFont from 'next/font/local'
 
 
 const gelica = localFont({
-  src: [
-    {
-        path: '../../../../public/Fonts/Gelica/Gelica-Regular.otf',
-        style: 'normal',
-    },
-    {
-        path: '../../../../public/Fonts/Gelica/Gelica-Bold.otf',
-        style: 'bold',
-    },
-  ],
+    src: '../../../../public/Fonts/Gelica/Gelica-Regular.otf',
 })
 
 const gelicaBold = localFont({

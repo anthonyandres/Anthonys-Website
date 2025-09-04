@@ -1,5 +1,3 @@
-//'use client'
-
 import React, { PropsWithChildren, RefObject, useState } from 'react'
 import { motion, useDragControls, useMotionValue, useSpring, useTransform, useVelocity } from 'framer-motion'
 import { DragHandle } from './DragHandle';
