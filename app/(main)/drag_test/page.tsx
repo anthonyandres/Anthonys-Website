@@ -198,7 +198,7 @@ function Page() {
 
 
         <div className='flex justify-center items-center h-full md:hidden'>
-          TODO: add mobile layout here (if you see this, you owe me 5 Canadian Dollars)
+          TODO: add mobile layout here. if you're on your phone, enable desktop mode! (if you see this, you owe me 5 Canadian Dollars)
         </div>
       </main>
   )

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './windows.css'
 import { IconContext } from 'react-icons'
-import {FaMinimize, FaRegFaceLaugh, FaRegFaceMeh } from 'react-icons/fa6'
+import {FaMinimize, FaRegFaceLaugh, FaRegFaceLaughWink, FaRegFaceMeh } from 'react-icons/fa6'
 import localFont from 'next/font/local'
 
 const gelica = localFont({
@@ -19,20 +19,26 @@ interface Props{
 
 function LinksWindow({showContact = () => {}}: Props) {
     const [isEmail, setIsEmail] = useState(false)
+    const [isEmailClicked, setIsEmailClicked] = useState(false)
 
       const happy = new Howl({
         src: ['./sounds/happy.wav'],
-        volume: 0.1
+        volume: 0.2
       })
       const sad = new Howl({
         src: ['./sounds/sad.wav'],
         volume: 0.5
       })
+      const excited = new Howl({
+        src: ['./sounds/excited.wav'],
+        volume: 0.5
+      })
 
     function onEmailHover(){if(!isEmail){setIsEmail(true);  happy.play()}else{setIsEmail(false); sad.play();}}
+    function onEmailClick(){setIsEmailClicked(true); excited.play(); window.location.href = 'mailto:anthonyandres1881@gmail.com';}
 
   return (
-    <div className={`window-colors prevent-select h-[596px] w-[30vw] min-w-[600px] max-w-[600px] border-0 rounded-[0px] ${gelica.className}`}>
+    <div className={`window-colors prevent-select h-[596px] max-h-[596px] w-[30vw] min-w-[600px] max-w-[600px] border-0 rounded-[0px] ${gelica.className}`}>
         <IconContext.Provider value={{ className: 'tertiary-window-colors justify-right border-0 size-[20px] transition duration-100 ease-in hover:scale-[110%]' }}>
                 <div className='z-10 absolute gap-x-16 justify-center top-3 right-3'>
                     <FaMinimize onClick={showContact}/>
@@ -51,10 +57,11 @@ function LinksWindow({showContact = () => {}}: Props) {
                     <p className='text-xs mt-2'>(psst check the links window)</p>        
                 </div> 
                 <div className='text-center border-0'>
-                    <button onClick={() => window.location.href = 'mailto:anthonyandres1881@gmail.com'}>
+                    <button onClick={onEmailClick}>
                         <IconContext.Provider value={{ className: 'border-0 size-40 transition duration-100 ease-in hover:scale-[110%] mt-7' }}>
-                        {!isEmail && <FaRegFaceMeh onMouseEnter={onEmailHover} onMouseLeave={onEmailHover}/>}
-                        {isEmail && <FaRegFaceLaugh onMouseEnter={onEmailHover} onMouseLeave={onEmailHover}/>}
+                        {!isEmail && !isEmailClicked && <FaRegFaceMeh onMouseEnter={onEmailHover} onMouseLeave={onEmailHover}/>}
+                        {isEmail && !isEmailClicked && <FaRegFaceLaugh onMouseEnter={onEmailHover} onMouseLeave={onEmailHover}/>}
+                        {isEmailClicked && <FaRegFaceLaughWink/>}
                         </IconContext.Provider>
                     </button>
                     <p>click to send me an email!</p>  
