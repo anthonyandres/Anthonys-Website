@@ -23,27 +23,28 @@ function LinksWindow({showContact = () => {}}: Props) {
 
       const happy = new Howl({
         src: ['./sounds/happy.wav'],
-        volume: 0.2
+        volume: 0.6
       })
       const sad = new Howl({
         src: ['./sounds/sad.wav'],
-        volume: 0.5
+        volume: 1.5
       })
       const excited = new Howl({
         src: ['./sounds/excited.wav'],
-        volume: 0.5
+        volume: 1.5
       })
 
-    function onEmailHover(){if(!isEmail){setIsEmail(true);  happy.play()}else{setIsEmail(false); sad.play();}}
+    function onEmailEnter(){if(!isEmail){setIsEmail(true); happy.play()}}
+    function onEmailLeave(){if(isEmail){setIsEmail(false); sad.play();}}
     function onEmailClick(){setIsEmailClicked(true); excited.play(); window.location.href = 'mailto:anthonyandres1881@gmail.com';}
 
   return (
     <div className={`window-colors prevent-select h-[596px] max-h-[596px] w-[30vw] min-w-[600px] max-w-[600px] border-0 rounded-[0px] ${gelica.className}`}>
         <IconContext.Provider value={{ className: 'tertiary-window-colors justify-right border-0 size-[20px] transition duration-100 ease-in hover:scale-[110%]' }}>
-                <div className='z-10 absolute gap-x-16 justify-center top-3 right-3'>
-                    <FaMinimize onClick={showContact}/>
-                </div>
-                </IconContext.Provider>
+            <div className='z-10 absolute gap-x-16 justify-center top-3 right-3'>
+                <FaMinimize onClick={showContact}/>
+            </div>
+        </IconContext.Provider>
         <div className='flex flex-col h-full'>
             <div className='border-0 tertiary-window-colors flex flex-row landing-header text-amber-100 p-20'>
                 <p className='pl-6 text-2xl text-center'>contact</p>
@@ -59,8 +60,8 @@ function LinksWindow({showContact = () => {}}: Props) {
                 <div className='text-center border-0'>
                     <button onClick={onEmailClick}>
                         <IconContext.Provider value={{ className: 'border-0 size-40 transition duration-100 ease-in hover:scale-[110%] mt-7' }}>
-                        {!isEmail && !isEmailClicked && <FaRegFaceMeh onMouseEnter={onEmailHover} onMouseLeave={onEmailHover}/>}
-                        {isEmail && !isEmailClicked && <FaRegFaceLaugh onMouseEnter={onEmailHover} onMouseLeave={onEmailHover}/>}
+                        {!isEmail && !isEmailClicked && <FaRegFaceMeh onMouseEnter={onEmailEnter} onMouseLeave={onEmailLeave} />}
+                        {isEmail && !isEmailClicked && <FaRegFaceLaugh onMouseEnter={onEmailEnter} onMouseLeave={onEmailLeave} />}
                         {isEmailClicked && <FaRegFaceLaughWink/>}
                         </IconContext.Provider>
                     </button>

@@ -16,7 +16,7 @@ interface Props{
 
 const press = new Howl({
     src: ['./sounds/craft.wav'],
-    volume: 0.1
+    volume: 0.3
 })
 
 

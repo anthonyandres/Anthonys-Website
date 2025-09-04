@@ -122,11 +122,53 @@ h1+h1 {
   --background-color:#181920;
   --neutral-color:#44475a;
   --primary-text-color: #a8b1c0;
-  --secondary-text-color:#ffb86c;
+  --secondary-text-color:	#e47070;
   --tertiary-text-color: #a8b1c0;
   --border-color: #747474f5;
   --window-background-color: #282a36;
   --scrollbar-color: #1d1e27;
+}
+
+/*Chrome*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range'] {
+      overflow: hidden;
+      width: 80px;
+      background-color: #ff7a7a00;
+      
+    }
+    
+    input[type='range']::-webkit-slider-runnable-track {
+      color: var(--window-background-color);
+      
+    }
+    
+    input[type='range']::-webkit-slider-thumb {
+      width: 10px;
+      -webkit-appearance: none;
+      height: 10px;
+      cursor: ew-resize;
+      background-color: var(--secondary-text-color);
+      
+    }
+
+}
+/** FF*/
+input[type="range"]::-moz-range-progress {
+  background-color: var(--neutral-color); 
+}
+input[type="range"]::-moz-range-track {  
+  background-color: var(--window-background-color);
+}
+input[type="range"]::-moz-progress-bar{
+  background-color: var(--secondary-text-color);
+}
+/* IE*/
+input[type="range"]::-ms-fill-lower {
+  background-color: var(--neutral-color);
+}
+input[type="range"]::-ms-fill-upper {  
+  background-color: var(--window-background-color);
 }
 
 

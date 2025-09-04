@@ -14,6 +14,7 @@ import Footer from '../_Components/Footer'
 import { Howl, Howler } from 'howler'
 import { FaMoon, FaSun, FaVolumeHigh, FaVolumeXmark } from 'react-icons/fa6'
 import { IconContext } from 'react-icons'
+import HowlerVolumeSlider from '../_Components/HowlerVolumeSlider'
 
 function Page() {
   const containerRef = useRef<null>(null)
@@ -30,23 +31,23 @@ function Page() {
   //Howler.mute(false) //all global methods are called using `Howler`
   const zoomIn = new Howl({
     src: ['./sounds/zoomIn.wav'],
-    volume: 0.3
+    volume: 0.9
   })
   const zoomOut = new Howl({
     src: ['./sounds/zoomOut.wav'],
-    volume: 0.5
+    volume: 1.5
   })
   const soundOn = new Howl({
     src: ['./sounds/soundOn.wav'],
-    volume: 0.5
+    volume: 1.5
   })
   const light = new Howl({
     src: ['./sounds/UI_Day.wav'],
-    volume: 0.5
+    volume: 1.5
   })
   const dark = new Howl({
     src: ['./sounds/UI_Night.wav'],
-    volume: 0.5
+    volume: 1.5
   })
 
   function onShowAboutClick(){if(!showAbout){setShowAbout(true); zoomIn.play()}else{setShowAbout(false); zoomOut.play()}} // function to handle logic if window(s) are shown or not. Yes its one line, i know
@@ -88,6 +89,10 @@ function Page() {
             {isMute && <FaVolumeXmark onClick={onMuteSoundClick}/>}
           </div>
         </IconContext.Provider>
+        <div className='absolute mt-7 ml-41'>
+          <HowlerVolumeSlider isMuted={isMute} />
+        </div>
+
         <div className='hidden md:inline overflow-hidden'>
           <div ref={containerRef} className='drag-handle imageCardContainer'>
             <div style={{ translate: '0px -250px'}}>

@@ -23,7 +23,7 @@ function Card({boundingRef, imgSrc}: PropsWithChildren<Props>) { // 'Card' takes
     // })
     const cardUp = new Howl({
         src: ['./sounds/Card_Drag.wav'],
-        volume: 0.3
+        volume: 0.9
     })
     // const cardDown = new Howl({
     //     src: ['./sounds/CARD_PLACE_01.wav'],
@@ -32,7 +32,7 @@ function Card({boundingRef, imgSrc}: PropsWithChildren<Props>) { // 'Card' takes
 
     const cardSound = new Howl({
         src: ['./sounds/Card_on_Card_8.wav' ],
-        volume: 0.5
+        volume: 1.5
     })
 
     const rotate = useTransform( // use the dampened speed values and map them to workable values for rotation (I don't want the card to rotate 16000 degrees if I move it so I map it to 70 degrees in either direction)
