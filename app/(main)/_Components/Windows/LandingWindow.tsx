@@ -24,14 +24,14 @@ function LandingWindow({showAbout = () => {}, showLinks = () => {}, showWork = (
 
                                                             //vvv the width here dictates the width of the parent (ComponentCard)
   return (
-    <div className='window-colors prevent-select h-[100%] w-[50vw] min-w-150 max-w-[960px] border-0 rounded-[0px]'>
+    <div className='window-colors prevent-select h-[100%] w-[50vw] min-w-165 max-w-[960px] border-0 rounded-[0px]'>
       <div className='flex flex-col gap-y-0'>
 
         <div className='tertiary-window-colors flex landing-header p-20'>
             <p className='pl-6 text-2xl'>home</p>
         </div>
           
-        <div className='flex border-0 overflow-hidden content flex-col gap-y-10 min-h-111 p-20 mt-6'>
+        <div className='flex border-0 overflow-hidden content flex-col gap-y-10 min-h-111 p-20'>
           <div className='window-colors border-0 justify-center items-center w-[100%] flex flex-col'>
             <div className={`border-0 justify-center flex min-w-[150px] w-[100%] ${gelicaBold.className}`}>
               <h2 className='text-[500%] text-center'>hey, i&apos;m <span className='secondary-window-colors'>anthony</span></h2>

@@ -56,7 +56,7 @@ function AboutWindow({showAbout = () => {}}: Props) {
 
                             <div className='window-colors border-0 h-min z-0 translate-y-60'>
                                 <p className={`secondary-window-colors border-0 flex justify-center items-center text-4xl ${gelicaBold.className} `}>Anthony Andres</p>
-                                <p className={`border-0 flex justify-center items-center text-xl ${gelica.className} `}>Toronto, Ontario based freelance developer</p>
+                                <p className={`border-0 flex justify-center items-center text-xl ${gelica.className} `}>Toronto, Ontario based developer</p>
                                 <p className={`border-0 flex justify-center items-center text-2xs ${gelica.className} `}>BEng. Computer Engineering Toronto Metropolitan University</p>       
                             </div>                             
                         </div>
