@@ -36,7 +36,7 @@ function onShowWorkClick(){if(!showWork){setShowWork(true); zoomIn.play()}else{s
   return (
     <div ref={boundingRef} className='-z-10 overflow-hidden flex justify-center items-center h-[100vh]'>
         <div className='z-0 translate-y-[90px]'>
-            <ComponentCard height={60} boundingRef={boundingRef}>
+            <ComponentCard height={596} boundingRef={boundingRef}>
                 <LandingWindow showAbout={onShowAboutClick} showBlog={onShowBlogClick} showContact={onShowContactClick} showLinks={onShowLinksClick} showWork={onShowWorkClick}/>
             </ComponentCard>
         </div>
@@ -45,8 +45,8 @@ function onShowWorkClick(){if(!showWork){setShowWork(true); zoomIn.play()}else{s
             <div className='absolute z-2'>
                 <AnimatePresence>
                   {showAbout &&
-                    <motion.div className='border-0' style={{ translate: '-450px -180px'}} key={'aboutWindow'} initial={{y:'50%', opacity: 0, scale: 0.5}} exit={{y:'50%', opacity: 0, scale: 0.5, transition: {duration: 0.1, ease: 'easeOut'}}} animate={{y: 0, opacity: 1, scale: 1}} transition={{duration: 0.2, ease: 'easeOut'}}>
-                      <ComponentCard height={50} boundingRef={hiddenWindowBoundingRef}>
+                    <motion.div className='border-0 translate-y-[-18vh] translate-x-[-23vw]' key={'aboutWindow'} initial={{y:'50%', opacity: 0, scale: 0.5}} exit={{y:'50%', opacity: 0, scale: 0.5, transition: {duration: 0.1, ease: 'easeOut'}}} animate={{y: 0, opacity: 1, scale: 1}} transition={{duration: 0.2, ease: 'easeOut'}}>
+                      <ComponentCard height={497} boundingRef={hiddenWindowBoundingRef}>
                         <AboutWindow showAbout={onShowAboutClick}></AboutWindow>
                       </ComponentCard>
                     </motion.div>   
@@ -58,8 +58,8 @@ function onShowWorkClick(){if(!showWork){setShowWork(true); zoomIn.play()}else{s
               <div className='absolute z-2'>
                 <AnimatePresence>
                   {showLinks &&
-                    <motion.div className='border-0' style={{ translate: '-150px -90px'}} key={'linksWindow'} initial={{y:'50%', opacity: 0, scale: 0.5}} exit={{y:'50%', opacity: 0, scale: 0.5, transition: {duration: 0.1, ease: 'easeOut'}}} animate={{y: 0, opacity: 1, scale: 1}} transition={{duration: 0.2, ease: 'easeOut'}}>
-                      <ComponentCard height={40} boundingRef={hiddenWindowBoundingRef}>
+                    <motion.div className='border-0 translate-y-[-9vh] translate-x-[-8vw]' key={'linksWindow'} initial={{y:'50%', opacity: 0, scale: 0.5}} exit={{y:'50%', opacity: 0, scale: 0.5, transition: {duration: 0.1, ease: 'easeOut'}}} animate={{y: 0, opacity: 1, scale: 1}} transition={{duration: 0.2, ease: 'easeOut'}}>
+                      <ComponentCard height={398} boundingRef={hiddenWindowBoundingRef}>
                         <LinksWindow showLinks={onShowLinksClick}></LinksWindow>
                       </ComponentCard>
                     </motion.div>   
@@ -71,8 +71,8 @@ function onShowWorkClick(){if(!showWork){setShowWork(true); zoomIn.play()}else{s
               <div className='absolute z-2'>
                 <AnimatePresence>
                   {showWork &&
-                    <motion.div className='border-0' style={{ translate: '500px -190px'}} key={'workWindow'} initial={{y:'50%', opacity: 0, scale: 0.5}} exit={{y:'50%', opacity: 0, scale: 0.5, transition: {duration: 0.1, ease: 'easeOut'}}} animate={{y: 0, opacity: 1, scale: 1}} transition={{duration: 0.2, ease: 'easeOut'}}>
-                      <ComponentCard height={40} boundingRef={hiddenWindowBoundingRef}>
+                    <motion.div className='border-0 translate-y-[-19vh] translate-x-[26vw]' key={'workWindow'} initial={{y:'50%', opacity: 0, scale: 0.5}} exit={{y:'50%', opacity: 0, scale: 0.5, transition: {duration: 0.1, ease: 'easeOut'}}} animate={{y: 0, opacity: 1, scale: 1}} transition={{duration: 0.2, ease: 'easeOut'}}>
+                      <ComponentCard height={398} boundingRef={hiddenWindowBoundingRef}>
                         <WorkWindow showWork={onShowWorkClick}></WorkWindow>
                       </ComponentCard>
                     </motion.div>   
@@ -84,8 +84,8 @@ function onShowWorkClick(){if(!showWork){setShowWork(true); zoomIn.play()}else{s
               <div className='absolute z-2'>
                 <AnimatePresence>
                   {showBlog &&
-                    <motion.div className='border-0' style={{ translate: '-550px 270px'}} key={'blogWindow'} initial={{y:'50%', opacity: 0, scale: 0.5}} exit={{y:'50%', opacity: 0, scale: 0.5, transition: {duration: 0.1, ease: 'easeOut'}}} animate={{y: 0, opacity: 1, scale: 1}} transition={{duration: 0.2, ease: 'easeOut'}}>
-                      <ComponentCard height={30} boundingRef={hiddenWindowBoundingRef}>
+                    <motion.div className='border-0 translate-y-[27vh] translate-x-[-29vw]' key={'blogWindow'} initial={{y:'50%', opacity: 0, scale: 0.5}} exit={{y:'50%', opacity: 0, scale: 0.5, transition: {duration: 0.1, ease: 'easeOut'}}} animate={{y: 0, opacity: 1, scale: 1}} transition={{duration: 0.2, ease: 'easeOut'}}>
+                      <ComponentCard height={298} boundingRef={hiddenWindowBoundingRef}>
                         <BlogWindow showBlog={onShowBlogClick}></BlogWindow>
                       </ComponentCard>
                     </motion.div>   
@@ -97,8 +97,8 @@ function onShowWorkClick(){if(!showWork){setShowWork(true); zoomIn.play()}else{s
               <div className='absolute z-2'>
                 <AnimatePresence>
                   {showContact &&
-                    <motion.div className='border-0' style={{ translate: '620px 170px'}} key={'contactWindow'} initial={{y:'50%', opacity: 0, scale: 0.5}} exit={{y:'50%', opacity: 0, scale: 0.5, transition: {duration: 0.1, ease: 'easeOut'}}} animate={{y: 0, opacity: 1, scale: 1}} transition={{duration: 0.2, ease: 'easeOut'}}>
-                      <ComponentCard height={60} boundingRef={hiddenWindowBoundingRef}>
+                    <motion.div className='border-0 translate-y-[17vh] translate-x-[32vw]' key={'contactWindow'} initial={{y:'50%', opacity: 0, scale: 0.5}} exit={{y:'50%', opacity: 0, scale: 0.5, transition: {duration: 0.1, ease: 'easeOut'}}} animate={{y: 0, opacity: 1, scale: 1}} transition={{duration: 0.2, ease: 'easeOut'}}>
+                      <ComponentCard height={596} boundingRef={hiddenWindowBoundingRef}>
                         <ContactWindow showContact={onShowContactClick}></ContactWindow>
                       </ComponentCard>
                     </motion.div>   

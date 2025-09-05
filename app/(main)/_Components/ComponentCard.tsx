@@ -79,7 +79,7 @@ function ComponentCard({boundingRef, height, children}: PropsWithChildren<Props>
                 zIndex,
                 boxShadow: '2px 8px 2px rgba(0, 0, 0, 0.466)',
                 position: 'relative',
-                height: `${height}vh`, // 60vh the height here dictates the height of the child (whatever react component you pass into this)
+                height: `${height}px`, // 60vh the height here dictates the height of the child (whatever react component you pass into this)
                 width: '', 
                 borderRadius: '7px', 
                 background:'white', 
