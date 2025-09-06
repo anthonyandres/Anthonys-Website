@@ -14,6 +14,10 @@ const gelicaBold = localFont({
     src: '../../../../public/Fonts/Gelica/Gelica-Bold.otf',
 })
 
+const gelicaLight = localFont({
+    src: '../../../../public/Fonts/Gelica/Gelica-Light.otf',
+})
+
 interface Props{
   showAbout: ()=> void
 }
@@ -38,10 +42,49 @@ function AboutWindow({showAbout = () => {}}: Props) {
 
 
             <div className='text-black overflow-hidden border-0 grid grid-cols-2 h-full'>
-                <div className='border-0 h-[446px] inline-flex flex-col p-5 overflow-y-auto scrollbar-colors'>
-                     <div className='border-0'>
-                        <h2 className='secondary-window-colors text-2xl text-center'>A little bit about me..</h2>
-                        <p className='window-colors text-justify'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborumLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborumLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborumLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                <div className='border-0 h-[446px] inline-flex flex-col p-8 overflow-y-auto scrollbar-colors'>
+                     <div className='border-0 grid gap-y-5'>
+                        <h2 className='secondary-window-colors text-3xl font-bold text-center'>Hey! I&#39;m Anthony, I am...</h2>
+                            <div className={`window-colors ${gelicaLight.className}`}>
+                                <ul className=' text-[20px] list-disc pl-10'>
+                                    <li>a recent Computer Engineering graduate</li>
+                                    <li>currently looking for work!</li>
+                                    <li>open to gain new experiences and learn as much as I can in the industry</li>
+                                </ul>        
+                            </div>
+
+                            <h2 className='window-colors text-3xl font-bold mt-5'>Education</h2>
+                            <div className=''>
+                                <p className='bgbg bg-[#d1cca366] rounded-[20px] pt-2 pb-2 pl-5'>Bachelor of Engineering in Computer Engineering <span className={`text-[#919191] text-[15px] ${gelicaLight.className}`}>(Software Engineering Option)<br/>GPA: 3.27 / 4.33</span></p>
+                            </div>
+
+                            <p className='window-colors text-2xl text-left font-bold mt-5'>Related topics i&#39;m interested in:</p>
+                            <div className={`window-colors ${gelicaLight.className}`}>
+                                <ul className=' text-[20px] list-disc pl-10'>
+                                    <li>frontend development</li>
+                                    <li>backend development</li>
+                                    <li>QA software/hardware testing</li>
+                                    <li>hardware systems design/analysis</li>
+                                </ul>        
+                            </div>
+                            
+                        <h2 className='secondary-window-colors font-bold text-3xl text-center mt-10'>A little bit about me..</h2>
+                            <p className='window-colors text-justify'>I have always been a very analytical person. I tend to break concepts down to understandable components so that I can understand not only specifically how the the entirety works, but how the individual components function and contribute to the overall system. No matter what I do, I always apply that thinking and the end result of having gained new knowledge that way will always be satisfying to me. Knowing that I put in the work in such a way makes me enjoy learning as an experience, and not just for the final reward of new knowledge! <br/><br/> In a sense, this way of thinking I&#39;ve adapted over time has proven to a little bit pesky. Sometimes I find myself a litle too invested in learning about various topics...<br/><sub>suffering from success?</sub></p>
+                        
+                        <p className='window-colors text-2xl text-left font-bold mt-5'>My other passions:</p>
+                            <div className={`window-colors ${gelicaLight.className}`}>
+                                <ul className=' text-[20px] list-disc pl-10'>
+                                    <li>MUSIC!</li>
+                                    <li>audio equipment</li>
+                                    <li>digital and film photography/videography</li>
+                                    <li>hobby electronics</li>
+                                    <li>electronics repair</li>
+                                    <li>visual art</li>
+                                    <li>video games</li>
+                                    <li>tabletop RPGs</li>
+                                    <li>music production</li>
+                                </ul>        
+                            </div>
                         
                      </div>
                 </div>

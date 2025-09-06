@@ -13,6 +13,11 @@
     color: var(--primary-text-color)
 }
 
+.bgbg{
+  background: var(--bgbg-color);
+  color: var(--primary-text-color);
+}
+
 .secondary-window-colors{
   color: var(--secondary-text-color)
 }

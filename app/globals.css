@@ -17,6 +17,7 @@
   --border-color: #747474f5;
   --window-background-color: #f7f4db;
   --scrollbar-color: #e0dec7;
+  --bgbg-color: #d1cca366;
   /* --content-background-color: #fff7ec;
   --sidebar-background-color: #fff7ec; */
 
@@ -127,6 +128,7 @@ h1+h1 {
   --border-color: #747474f5;
   --window-background-color: #282a36;
   --scrollbar-color: #1d1e27;
+  --bgbg-color: #767a8f66;
 }
 
 /*Chrome*/

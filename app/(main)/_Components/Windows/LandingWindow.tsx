@@ -34,7 +34,7 @@ function LandingWindow({showAbout = () => {}, showLinks = () => {}, showWork = (
         <div className='flex border-0 overflow-hidden content flex-col gap-y-10 min-h-111 p-20'>
           <div className='window-colors border-0 justify-center items-center w-[100%] flex flex-col'>
             <div className={`border-0 justify-center flex min-w-[150px] w-[100%] ${gelicaBold.className}`}>
-              <h2 className='text-[500%] text-center'>hey, i&apos;m <span className='secondary-window-colors'>anthony</span></h2>
+              <h2 className='text-[500%] text-center'>hey, i&#39;m <span className='secondary-window-colors'>anthony</span></h2>
             </div>
             
             <div className=' border-0 w-[100%] min-w-[150px] justify-center flex -translate-y-0'>
