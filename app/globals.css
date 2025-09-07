@@ -109,6 +109,12 @@ body {
   background-color: var(--background-color);
 }
 
+.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
 h1{
     font-size: 80px;
     text-align: center;
@@ -135,7 +141,7 @@ h1+h1 {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     input[type='range'] {
       overflow: hidden;
-      width: 80px;
+      width: 140px;
       background-color: #ff7a7a00;
       
     }

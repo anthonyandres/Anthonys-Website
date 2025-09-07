@@ -4,7 +4,6 @@ import Footer from '../_Components/Footer'
 import CardContainer from '../_Components/CardContainer'
 import WindowContainer from '../_Components/WindowContainer'
 import DarkMuteVolumeComponents from '../_Components/DarkMuteVolumeComponents'
-import Head from 'next/head'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -32,6 +31,8 @@ function Page() {
               <div className='border-0 pointer-events-none'>
                 <CardContainer imgSrc={'./anthony.jpg'}></CardContainer>
               </div>
+
+              {/* <EnableDrawingButtons /> */}
 
 
               {/* this component has all of the window components */}

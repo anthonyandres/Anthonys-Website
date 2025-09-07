@@ -102,11 +102,11 @@ function Card({boundingRef, imgSrc}: PropsWithChildren<Props>) { // 'Card' takes
                     relative
                     inset-0 
                     min-w-min 
-                    -z-10 
+                    z-1 
                     pointer-events-auto'>
         {/* <span style={{perspective: 800, border: '5px solid white', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}} className='inset-0 min-w-min -z-10 pointer-events-auto'> */}
         <motion.div
-            className=' drag-elements flex flex-col overflow-hidden group'
+            className='z-1 drag-elements flex flex-col overflow-hidden group'
             drag                                                                        // enable drag
             dragSnapToOrigin={false}
             dragConstraints={boundingRef}                                               // set bounding area

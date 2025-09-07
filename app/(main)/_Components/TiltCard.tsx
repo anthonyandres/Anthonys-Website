@@ -54,7 +54,7 @@ function TiltCard({imgSrc}: PropsWithChildren<Props>) { // 'Card' takes a refere
 
     const sound1 = new Howl({
         src: ['./sounds/Obj_Fall_Leaf_1.wav'],
-        volume: 0.9,
+        volume: 0.9
     })
     const sound2 = new Howl({
         src: ['./sounds/Obj_Fall_Leaf_2.wav'],

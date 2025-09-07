@@ -42,8 +42,8 @@ function AboutWindow({showAbout = () => {}}: Props) {
 
 
             <div className='text-black overflow-hidden border-0 grid grid-cols-2 h-full'>
-                <div className='border-0 h-[446px] inline-flex flex-col p-8 overflow-y-auto scrollbar-colors'>
-                     <div className='border-0 grid gap-y-5'>
+                <div className='border-0 h-[446px] inline-flex flex-col p-4 overflow-y-auto scrollbar-colors'>
+                     <div className='window-colors border-3 border-dashed rounded-2xl p-4 grid gap-y-5'>
                         <h2 className='secondary-window-colors text-3xl font-bold text-center'>Hey! I&#39;m Anthony, I am...</h2>
                             <div className={`window-colors ${gelicaLight.className}`}>
                                 <ul className=' text-[20px] list-disc pl-10'>
