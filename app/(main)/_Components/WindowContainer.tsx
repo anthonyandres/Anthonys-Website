@@ -167,8 +167,8 @@ function onShowDrawingsClick(){if(!showDrawings){setShowDrawings(true); randomDr
 
             {showDrawings &&
                 <div className=' pointer-events-none'>
-                    <img className='absolute bottom-[50vh] translate-y-[50vh] left-0 w-[34vw]' src={'./assets/gif/girlies.gif'} alt='loading...' draggable={false} />
-                    <img className='absolute bottom-0 right-0 w-[28vw] scale-x-[100%]' src={'./assets/gif/doodle.gif'} alt='loading...' draggable={false} />
+                    <img className='absolute bottom-[50vh] translate-y-[50vh] left-0 w-[650px]' src={'./assets/gif/girlies.gif'} alt='loading...' draggable={false} />
+                    <img className='absolute bottom-0 right-0 w-[530px] scale-x-[100%]' src={'./assets/gif/doodle.gif'} alt='loading...' draggable={false} />
                 </div>
             }
 
