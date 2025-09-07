@@ -98,7 +98,7 @@ function DarkMuteVolumeComponents({children}:any) {
                 <div className='z-0 pointer-events-none'>
                     <img className='absolute left-2/6 -top-20 rotate-20 w-[900px]' src={'./assets/gif/couch.gif'} alt='loading...' draggable={false} />
                     <img className='absolute bottom-0 left-0 w-[650px]' src={'./assets/gif/girlies.gif'} alt='loading...' draggable={false} />
-                    <img className='absolute bottom-0 right-0 w-[650px] -scale-x-[100%]' src={'./assets/gif/sun.gif'} alt='loading...' draggable={false} />
+                    <img className='absolute bottom-0 right-0 w-[650px] -scale-x-[100%]' src={'./assets/gif/doodle.gif'} alt='loading...' draggable={false} />
                 </div>
             }
 

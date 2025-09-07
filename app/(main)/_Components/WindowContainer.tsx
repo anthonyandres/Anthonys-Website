@@ -102,6 +102,8 @@ function onShowDrawingsClick(){if(!showDrawings){setShowDrawings(true); randomDr
                     <motion.div className='border-0 translate-y-[-18vh] translate-x-[-23vw]' key={'aboutWindow'} initial={{y:'50%', opacity: 0, scale: 0.5}} exit={{y:'50%', opacity: 0, scale: 0.5, transition: {duration: 0.1, ease: 'easeOut'}}} animate={{y: 0, opacity: 1, scale: 1}} transition={{duration: 0.2, ease: 'easeOut'}}>
                       <ComponentCard height={497} boundingRef={hiddenWindowBoundingRef}>
                         <AboutWindow showAbout={onShowAboutClick}></AboutWindow>
+                        {showDrawings && <img className='pointer-events-none absolute bottom-40 -right-60 rotate-0 w-[400px]' src={'./assets/gif/guides.gif'} alt='loading...' draggable={false} />}
+                        {showDrawings && <img className='pointer-events-none absolute bottom-0 left-115 w-[200px]' src={'./assets/gif/angryGuide.gif'} alt='loading...' draggable={false} />}
                       </ComponentCard>
                     </motion.div>   
                   }
@@ -115,6 +117,7 @@ function onShowDrawingsClick(){if(!showDrawings){setShowDrawings(true); randomDr
                     <motion.div className='border-0 translate-y-[-9vh] translate-x-[-8vw]' key={'linksWindow'} initial={{y:'50%', opacity: 0, scale: 0.5}} exit={{y:'50%', opacity: 0, scale: 0.5, transition: {duration: 0.1, ease: 'easeOut'}}} animate={{y: 0, opacity: 1, scale: 1}} transition={{duration: 0.2, ease: 'easeOut'}}>
                       <ComponentCard height={398} boundingRef={hiddenWindowBoundingRef}>
                         <LinksWindow showLinks={onShowLinksClick}></LinksWindow>
+                        {showDrawings && <img className='pointer-events-none absolute -bottom-55 left-5 w-[400px]' src={'./assets/gif/grunge.gif'} alt='loading...' draggable={false} />}
                       </ComponentCard>
                     </motion.div>   
                   }  
@@ -154,6 +157,7 @@ function onShowDrawingsClick(){if(!showDrawings){setShowDrawings(true); randomDr
                     <motion.div className='border-0 translate-y-[17vh] translate-x-[32vw]' key={'contactWindow'} initial={{y:'50%', opacity: 0, scale: 0.5}} exit={{y:'50%', opacity: 0, scale: 0.5, transition: {duration: 0.1, ease: 'easeOut'}}} animate={{y: 0, opacity: 1, scale: 1}} transition={{duration: 0.2, ease: 'easeOut'}}>
                       <ComponentCard height={596} boundingRef={hiddenWindowBoundingRef}>
                         <ContactWindow showContact={onShowContactClick}></ContactWindow>
+                        {showDrawings && <img className='pointer-events-none absolute -bottom-40 left-0  w-[350px]' src={'./assets/gif/sun.gif'} alt='loading...' draggable={false} />}
                       </ComponentCard>
                     </motion.div>   
                   }  
@@ -163,8 +167,8 @@ function onShowDrawingsClick(){if(!showDrawings){setShowDrawings(true); randomDr
 
             {showDrawings &&
                 <div className=' pointer-events-none'>
-                    <img className='absolute bottom-0 left-0 w-[650px]' src={'./assets/gif/girlies.gif'} alt='loading...' draggable={false} />
-                    <img className='absolute bottom-0 right-0 w-[650px] -scale-x-[100%]' src={'./assets/gif/sun.gif'} alt='loading...' draggable={false} />
+                    <img className='absolute bottom-[50vh] translate-y-[50vh] left-0 w-[34vw]' src={'./assets/gif/girlies.gif'} alt='loading...' draggable={false} />
+                    <img className='absolute bottom-0 right-0 w-[28vw] scale-x-[100%]' src={'./assets/gif/doodle.gif'} alt='loading...' draggable={false} />
                 </div>
             }
 
