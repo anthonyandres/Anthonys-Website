@@ -80,7 +80,7 @@ function onShowWorkClick(){if(!showWork){setShowWork(true); zoomIn.play()}else{s
 function onShowDrawingsClick(){if(!showDrawings){setShowDrawings(true); randomDraw()}else{setShowDrawings(false); randomDraw()}}
 
   return (
-    <div>
+    <div className='prevent-select'>
       <IconContext.Provider value={{ className: 'tertiary-window-colors border-0 size-10 transition duration-100 ease-in hover:scale-[110%] ml-7 mt-4' }}>
         <div className='border-0 absolute ml-28'>
             <FaPaintbrush onClick={onShowDrawingsClick}/>
@@ -91,7 +91,7 @@ function onShowDrawingsClick(){if(!showDrawings){setShowDrawings(true); randomDr
         <div className='z-1 translate-y-[90px]'>
             <ComponentCard height={596} boundingRef={boundingRef}>
                 <LandingWindow showAbout={onShowAboutClick} showBlog={onShowBlogClick} showContact={onShowContactClick} showLinks={onShowLinksClick} showWork={onShowWorkClick}/>
-                {showDrawings && <img className='pointer-events-none absolute -bottom-70 -right-20 rotate-20 w-[600px]' src={'./assets/gif/couch.gif'} alt='loading...' />}
+                {showDrawings && <img className='pointer-events-none absolute -bottom-70 -right-20 rotate-20 w-[600px]' src={'./assets/gif/couch.gif'} alt='loading...' draggable={false} />}
             </ComponentCard>
         </div>
 
