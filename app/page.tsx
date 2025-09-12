@@ -7,8 +7,8 @@ import DarkMuteVolumeComponents from './(main)/_Components/DarkMuteVolumeCompone
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "DRAG TEST",
-  description: 'drag_test.',
+  title: "Anthony's Website",
+  description: "The Anthony Website.",
 };
 
 function Page() {
