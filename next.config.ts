@@ -12,7 +12,7 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: '/My-React-Website',
+        source: '/',
         destination: '/home',
         permanent: true,
       },
