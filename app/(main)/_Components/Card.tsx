@@ -22,7 +22,7 @@ function Card({boundingRef, imgSrc}: PropsWithChildren<Props>) { // 'Card' takes
     //     volume: 0.3
     // })
     const cardUp = new Howl({
-        src: ['./sounds/Card_Drag.wav'],
+        src: ['/sounds/Card_Drag.wav'],
         volume: 0.9
     })
     // const cardDown = new Howl({
@@ -111,7 +111,7 @@ function Card({boundingRef, imgSrc}: PropsWithChildren<Props>) { // 'Card' takes
             dragSnapToOrigin={false}
             dragConstraints={boundingRef}                                               // set bounding area
             whileDrag={{boxShadow: "12px 16px 2px rgba(0, 0, 0, 0.466)"}}               // while drag enable boxshadow: offset x, y, blur radius
-            whileHover={{scale: 1.07, boxShadow: "7px 7px 1px rgba(0, 0, 0, 0.466)"}}   // while hovering, scale and enable boxshadow
+            whileHover={{scale: 1.04, boxShadow: "7px 7px 1px rgba(0, 0, 0, 0.466)"}}   // while hovering, scale and enable boxshadow
             whileTap={{ scale: 1.14, boxShadow: "12px 16px 2px rgba(0, 0, 0, 0.466)" }} // while clicking on, scale increase and box shadow enable
             dragElastic={0.25}                                                          // effects resistance to being outside bounding box, lower is more resistance
             dragMomentum={false}                                                        // effects movement after drag ends
@@ -119,8 +119,9 @@ function Card({boundingRef, imgSrc}: PropsWithChildren<Props>) { // 'Card' takes
             onMouseMove={handleMouseMove}                                               // when mouse moves on element, call this function
             onMouseLeave={handleMouseLeave}                                             //  when mouse leaves element, call this function
             //onMouseDown={updateZIndex}
+            onTapStart={handleDrag}
             onHoverStart={handleHoverStart}
-            onDragStart={handleDrag}
+            //onDragStart={handleDrag}
             onDragEnd={handleDragEnd}                                           
             style={{
                     //boxShadow: "5px 5px 0px rgba(0, 0, 0, 0.466)",

@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { IconContext } from 'react-icons'
-import { FaMoon, FaPaintbrush, FaSun, FaVolumeHigh, FaVolumeXmark } from 'react-icons/fa6'
+import { FaMoon, FaSun, FaVolumeHigh, FaVolumeXmark } from 'react-icons/fa6'
 import HowlerVolumeSlider from './HowlerVolumeSlider'
 import "../../globals.css"
 import { Howl, Howler } from 'howler'
@@ -29,21 +29,21 @@ function DarkMuteVolumeComponents({children}:any) {
         volume: 1.5
     })
     const sound1 = new Howl({
-            src: ['./sounds/draw1.wav'],
-            volume: 2
-        })
-        const sound2 = new Howl({
-            src: ['./sounds/draw2.wav'],
-            volume: 2
-        })
-        const sound3 = new Howl({
-            src: ['./sounds/draw3.wav'],
-            volume: 2
-        })
-        const sound4 = new Howl({
-            src: ['./sounds/draw4.wav'],
-            volume: 2
-        })
+        src: ['./sounds/draw1.wav'],
+        volume: 2
+    })
+    const sound2 = new Howl({
+        src: ['./sounds/draw2.wav'],
+        volume: 2
+    })
+    const sound3 = new Howl({
+        src: ['./sounds/draw3.wav'],
+        volume: 2
+    })
+    const sound4 = new Howl({
+        src: ['./sounds/draw4.wav'],
+        volume: 2
+    })
 
     function randomDraw(){
         const choice = Math.floor(Math.random() * 4)
@@ -71,7 +71,7 @@ function DarkMuteVolumeComponents({children}:any) {
     
     function onDarkModeClick(){if(!isDark){setIsDark(true);  dark.play()}else{setIsDark(false); light.play();}}
     function onMuteSoundClick(){if(!isMute){setIsMute(true);  Howler.mute(true)}else{setIsMute(false); soundOn.play(); Howler.mute(false)}} //Howler.mute(false): all howler global methods are called using `Howler`
-    function onShowDrawingsClick(){if(!showDrawings){setShowDrawings(true); randomDraw()}else{setShowDrawings(false); randomDraw()}}
+    
     return (
         <div className='z-1 main-bg-colors h-dvh overflow-hidden' data-theme={isDark ? 'dark' : 'light'}>
             <IconContext.Provider value={{ className: 'tertiary-window-colors border-0 size-10 transition duration-100 ease-in hover:scale-[110%] ml-7 mt-4' }}>
