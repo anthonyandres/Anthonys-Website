@@ -2,23 +2,23 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  basePath: '/',
+  basePath: '/Anthonys-Website',
   output: 'export',
   reactStrictMode: true,
 }
 
 //redirect the basePath to the /drag_test page
-module.exports = {
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/home',
-        permanent: true,
-      },
-    ]
-  },
-}
+// module.exports = {
+//   async redirects() {
+//     return [
+//       {
+//         source: '/',
+//         destination: '/home',
+//         permanent: true,
+//       },
+//     ]
+//   },
+// }
 
 // const withTranspilation = require("next-transpile-modules")([
 //   "dotenv",
