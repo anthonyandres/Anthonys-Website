@@ -1,5 +1,5 @@
 import React from 'react'
-import "../../globals.css"
+import "./globals.css"
 import Footer from './(main)/_Components/Footer'
 import CardContainer from './(main)/_Components/CardContainer'
 import WindowContainer from './(main)/_Components/WindowContainer'
