@@ -2,33 +2,33 @@ import { motion, useSpring } from 'framer-motion'
 import React, { useState } from 'react'
 
 function ScaleIcon({children}:any) {
-    const [src, setSrc] = useState('./sounds/meows/meow2_Key00.wav')
+    const [src, setSrc] = useState('./sounds/glass/glass0.wav')
     const [prevChoice, setPrevChoice] = useState(0)
     const springScale = useSpring(1, {stiffness: 16000, damping: 100})
         
     const meow = new Howl({
         src: [src],
-        volume: 0.3
+        volume: 0.8
     })
 
     const handleMouseEnter = () => {
-        let choice = Math.floor(Math.random() * 13)
-        let meowChoice = Math.floor(Math.random() * 2) + 1
+        let choice = Math.floor(Math.random() * 6)
+        // let meowChoice = Math.floor(Math.random() * 2) + 1
         while(prevChoice == choice){
             console.log('reroll! ' + choice) 
-            choice = Math.floor(Math.random() * 13) //ensure that no number is repeated
+            choice = Math.floor(Math.random() * 6) //ensure that no number is repeated
         }
-        if(choice > 9){
-            setSrc('./sounds/meows/meow'+meowChoice+'_Key'+choice+'.wav')
-        }
-        else{
-            setSrc('./sounds/meows/meow'+meowChoice+'_Key0'+choice+'.wav')
-        }
+        // if(choice > 9){
+        //     setSrc('./sounds/meows/meow'+meowChoice+'_Key'+choice+'.wav')
+        // }
+        // else{
+        //     setSrc('./sounds/meows/meow'+meowChoice+'_Key0'+choice+'.wav')
+        // }
         setPrevChoice(choice)
+        // console.log(src)
+        // console.log('meowChoice: ' + meowChoice + ' choice: ' + choice)
+        setSrc('./sounds/glass/glass'+choice+'.wav')
         meow.play()
-        console.log(src)
-        console.log('meowChoice: ' + meowChoice + ' choice: ' + choice)
-        //setSrc('./sounds/steps/step('+choice+').wav')
         
     }
 
