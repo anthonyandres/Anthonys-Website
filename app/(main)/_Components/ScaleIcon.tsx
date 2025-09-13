@@ -2,8 +2,9 @@ import { motion, useSpring } from 'framer-motion'
 import React, { useState } from 'react'
 
 function ScaleIcon({children}:any) {
+    const init = Math.floor(Math.random() * 6)
     const [src, setSrc] = useState('./sounds/glass/glass0.wav')
-    const [prevChoice, setPrevChoice] = useState(0)
+    const [prevChoice, setPrevChoice] = useState(init)
     const springScale = useSpring(1, {stiffness: 16000, damping: 100})
         
     const meow = new Howl({
