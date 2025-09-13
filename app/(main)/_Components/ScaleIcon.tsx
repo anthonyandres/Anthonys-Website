@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 function ScaleIcon({children}:any) {
     const init = Math.floor(Math.random() * 6)
-    const [src, setSrc] = useState('./sounds/glass/glass0.wav')
+    const [src, setSrc] = useState('./sounds/glass/glass'+init+'.wav')
     const [prevChoice, setPrevChoice] = useState(init)
     const springScale = useSpring(1, {stiffness: 16000, damping: 100})
         
@@ -13,6 +13,7 @@ function ScaleIcon({children}:any) {
     })
 
     const handleMouseEnter = () => {
+        console.log('init: '+ init)
         let choice = Math.floor(Math.random() * 6)
         // let meowChoice = Math.floor(Math.random() * 2) + 1
         while(prevChoice == choice){
@@ -26,7 +27,7 @@ function ScaleIcon({children}:any) {
         //     setSrc('./sounds/meows/meow'+meowChoice+'_Key0'+choice+'.wav')
         // }
         setPrevChoice(choice)
-        // console.log(src)
+        //console.log(src)
         // console.log('meowChoice: ' + meowChoice + ' choice: ' + choice)
         setSrc('./sounds/glass/glass'+choice+'.wav')
         meow.play()

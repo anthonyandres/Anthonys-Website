@@ -4,7 +4,7 @@ import { motion, useSpring } from 'framer-motion'
 
 function HoverSoundBox({children}:any) {
     const init = Math.floor(Math.random() * 5) + 1 //random initial value
-    const [src, setSrc] = useState('./sounds/steps/step(1).wav')
+    const [src, setSrc] = useState('./sounds/steps/step('+init+').wav')
     const [prevChoice, setPrevChoice] = useState(init)
     const springScale = useSpring(1, {stiffness: 16000, damping: 100})
     
