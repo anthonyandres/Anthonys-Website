@@ -41,7 +41,7 @@ function WorkWindow({showWork = () => {}}: Props) {
             
         
         <div className='window-colors border-0 p-4 h-full overflow-y-auto scrollbar-colors'>
-          <p>Here are a few things I'm familiar with, as well as a few things I've worked on...</p>
+          <p>Here are a few things I&apos;m familiar with, as well as a few things I&apos;ve worked on...</p>
           <div className='grid grid-cols-2 grid-rows-1 border-0'>
             <div className='flex justify-left flex-col'>
               <h2 className={`text-[200%] secondary-window-colors ${gelicaBold.className}`}>Tools</h2>
