@@ -27,7 +27,7 @@ function AboutWindow({showAbout = () => {}}: Props) {
     const containerRef = useRef<null>(null)
 
   return (
-    <div className='window-colors prevent-select h-full w-[50vw] min-w-150 max-w-[960px] border-0 rounded-[0px]'>
+    <div className='window-colors prevent-select h-[491px] w-[50vw] min-w-150 max-w-[960px] border-0 rounded-[0px]'>
         <IconContext.Provider value={{className: 'tertiary-window-colors justify-right border-0 size-[20px] transition duration-100 ease-in hover:scale-[110%]' }}>
             <div className='z-10 absolute gap-x-16 justify-center top-3 right-3'>
                 <FaMinimize onClick={showAbout}/>
@@ -42,7 +42,7 @@ function AboutWindow({showAbout = () => {}}: Props) {
 
 
             <div className='text-black overflow-hidden border-0 grid grid-cols-2 h-full'>
-                <div className='border-0 h-[446px] inline-flex flex-col p-4 overflow-y-auto scrollbar-colors'>
+                <div className='border-0 h-full inline-flex flex-col p-4 overflow-y-auto scrollbar-colors'>
                      <div className='window-colors border-3 border-dashed rounded-2xl p-4 grid gap-y-5'>
                         <h2 className='secondary-window-colors text-3xl font-bold text-center'>Hey! I&#39;m Anthony, I am...</h2>
                             <div className={`window-colors ${gelicaLight.className}`}>

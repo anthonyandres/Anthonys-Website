@@ -10,6 +10,7 @@
 :root {
   /* Background Colors: */
   --background-color: #486a4f;
+  --secondary-background-color: #dadbdf;
   --neutral-color: #414141;
   --primary-text-color: #414141;
   --secondary-text-color: #e69e41;
@@ -127,6 +128,7 @@ h1+h1 {
 
 [data-theme='dark']{
   --background-color:#181920;
+  --secondary-background-color: #484b6a;
   --neutral-color:#44475a;
   --primary-text-color: #a8b1c0;
   --secondary-text-color:	#e47070;

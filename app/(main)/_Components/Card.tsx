@@ -22,7 +22,7 @@ function Card({boundingRef, imgSrc}: PropsWithChildren<Props>) { // 'Card' takes
     //     volume: 0.3
     // })
     const cardUp = new Howl({
-        src: ['/sounds/Card_Drag.wav'],
+        src: ['./sounds/Card_Drag.wav'],
         volume: 0.9
     })
     // const cardDown = new Howl({

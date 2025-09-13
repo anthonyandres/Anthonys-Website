@@ -26,6 +26,10 @@
   color: var(--tertiary-text-color)
 }
 
+.secondary-background-colors{
+  background: var(--secondary-background-color);
+}
+
 .scrollbar-colors{
   scrollbar-color: var(--scrollbar-color) var(--window-background-color);
   scrollbar-width: thin;

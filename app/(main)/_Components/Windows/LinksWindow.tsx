@@ -5,6 +5,7 @@ import {FaGithub, FaLinkedin, FaMinimize, FaPalette, FaSquareInstagram, FaYoutub
 import { MdLibraryMusic } from "react-icons/md"
 import localFont from 'next/font/local'
 import { Howl } from 'howler'
+import ScaleIcon from '../ScaleIcon'
 
 const gelica = localFont({
   src: '../../../../public/Fonts/Gelica/Gelica-Regular.otf',
@@ -40,30 +41,42 @@ function LinksWindow({showLinks = () => {}}: Props) {
                 <p className='pl-6 text-2xl text-center'>links</p>
             </div>
             <div className={`window-colors overflow-hidden border-0 grid text-xl grid-cols-3 h-full p-7 ${gelica.className}`}>
-                 <IconContext.Provider value={{ className: 'border-0 size-[70px] transition duration-100 ease-in hover:scale-[110%]' }}>
+                 <IconContext.Provider value={{ className: 'border-0 size-[70px]' }}>
                 <div className='border-0 inline-flex-center'>
-                    <p className=''>Github </p>
-                    <FaGithub onClick={()=>openInNewTab('https://github.com/anthonyandres')}/>    
+                    <ScaleIcon>
+                        <FaGithub onClick={()=>openInNewTab('https://github.com/anthonyandres')}/>
+                        <p className=''>Github </p>
+                    </ScaleIcon>    
                 </div>
                 <div className='border-0 inline-flex-center'>
-                    <p className=''>LinkedIn </p>
-                    <FaLinkedin onClick={()=>openInNewTab('https://www.linkedin.com/in/anthony-andres-5599121b6/')}/>     
+                    <ScaleIcon>
+                        <FaLinkedin onClick={()=>openInNewTab('https://www.linkedin.com/in/anthony-andres-5599121b6/')}/>
+                        <p className=''>LinkedIn </p>
+                    </ScaleIcon>     
                 </div> 
                 <div className='border-0 inline-flex-center'>
-                    <p className=''>Youtube </p>
-                    <FaYoutube onClick={()=>openInNewTab('https://www.youtube.com/@anthong_/featured')}/>     
+                    <ScaleIcon>
+                        <FaYoutube onClick={()=>openInNewTab('https://www.youtube.com/@anthong_/featured')}/>
+                        <p className=''>Youtube </p>
+                    </ScaleIcon>     
                 </div> 
                 <div className='border-0 inline-flex-center'>
-                    <p className=''>Instagram </p>
-                    <FaSquareInstagram onClick={()=>openInNewTab('https://www.instagram.com/anthong.png/')}/>     
+                    <ScaleIcon>
+                        <FaSquareInstagram onClick={()=>openInNewTab('https://www.instagram.com/anthong.png/')}/>
+                        <p className=''>Instagram </p>    
+                    </ScaleIcon> 
                 </div> 
                 <div className='border-0 inline-flex-center'>
-                    <p className=''>Art! </p>
-                    <FaPalette onClick={()=>openInNewTab('')}/>     
+                    <ScaleIcon>
+                        <FaPalette onClick={()=>openInNewTab('')}/>
+                        <p className=''>Art! </p>
+                    </ScaleIcon>     
                 </div>
                 <div className='border-0 inline-flex-center'>
-                    <p className=''>Music! </p>
-                    <MdLibraryMusic onClick={()=>openInNewTab('https://open.spotify.com/user/anthobhu?si=df297d63376c45f3')}/>     
+                    <ScaleIcon>
+                        <MdLibraryMusic onClick={()=>openInNewTab('https://open.spotify.com/user/anthobhu?si=df297d63376c45f3')}/>
+                        <p className=''>Music! </p>
+                    </ScaleIcon>
                 </div>
                 </IconContext.Provider>            
             </div>
