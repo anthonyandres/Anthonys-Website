@@ -40,44 +40,49 @@ function LinksWindow({showLinks = () => {}}: Props) {
             <div className='tertiary-window-colors flex flex-row landing-header text-amber-100 p-20'>
                 <p className='pl-6 text-2xl text-center'>links</p>
             </div>
-            <div className={`window-colors overflow-hidden border-0 grid text-xl grid-cols-3 h-full p-7 ${gelica.className}`}>
-                 <IconContext.Provider value={{ className: 'border-0 size-[70px]' }}>
-                <div className='border-0 inline-flex-center'>
-                    <ScaleIcon>
+            <div className={`window-colors overflow-hidden border-0 grid text-xl grid-cols-3 h-full p-7 pt-12 ${gelica.className}`}>
+                <IconContext.Provider value={{ className: 'border-0 size-[80px]' }}>
+                <ScaleIcon>
+                    <div className='border-0 flex flex-col items-center'>
                         <FaGithub onClick={()=>openInNewTab('https://github.com/anthonyandres')}/>
                         <p className=''>Github </p>
-                    </ScaleIcon>    
-                </div>
-                <div className='border-0 inline-flex-center'>
-                    <ScaleIcon>
+                    </div>
+                </ScaleIcon>
+
+                <ScaleIcon>
+                    <div className='border-0 flex flex-col items-center'>
                         <FaLinkedin onClick={()=>openInNewTab('https://www.linkedin.com/in/anthony-andres-5599121b6/')}/>
                         <p className=''>LinkedIn </p>
-                    </ScaleIcon>     
-                </div> 
-                <div className='border-0 inline-flex-center'>
-                    <ScaleIcon>
+                    </div>
+                </ScaleIcon>
+
+                <ScaleIcon>
+                    <div className='border-0 flex flex-col items-center'>
                         <FaYoutube onClick={()=>openInNewTab('https://www.youtube.com/@anthong_/featured')}/>
                         <p className=''>Youtube </p>
-                    </ScaleIcon>     
-                </div> 
-                <div className='border-0 inline-flex-center'>
-                    <ScaleIcon>
+                    </div>
+                </ScaleIcon>
+
+                <ScaleIcon>
+                    <div className='border-0 flex flex-col items-center'>
                         <FaSquareInstagram onClick={()=>openInNewTab('https://www.instagram.com/anthong.png/')}/>
-                        <p className=''>Instagram </p>    
-                    </ScaleIcon> 
-                </div> 
-                <div className='border-0 inline-flex-center'>
-                    <ScaleIcon>
+                        <p className=''>Instagram </p>  
+                    </div>
+                </ScaleIcon>
+
+                <ScaleIcon>
+                    <div className='border-0 flex flex-col items-center'>
                         <FaPalette onClick={()=>openInNewTab('')}/>
                         <p className=''>Art! </p>
-                    </ScaleIcon>     
-                </div>
-                <div className='border-0 inline-flex-center'>
-                    <ScaleIcon>
+                    </div>
+                </ScaleIcon>
+
+                <ScaleIcon>
+                    <div className='border-0 flex flex-col items-center'>
                         <MdLibraryMusic onClick={()=>openInNewTab('https://open.spotify.com/user/anthobhu?si=df297d63376c45f3')}/>
                         <p className=''>Music! </p>
-                    </ScaleIcon>
-                </div>
+                    </div>
+                </ScaleIcon>
                 </IconContext.Provider>            
             </div>
             

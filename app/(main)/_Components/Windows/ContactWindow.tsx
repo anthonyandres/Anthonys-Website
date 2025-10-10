@@ -23,11 +23,11 @@ function LinksWindow({showContact = () => {}}: Props) {
 
       const happy = new Howl({
         src: ['./sounds/happy.wav'],
-        volume: 0.6
+        volume: 0.4
       })
       const sad = new Howl({
         src: ['./sounds/sad.wav'],
-        volume: 1.5
+        volume: 1.2
       })
       const excited = new Howl({
         src: ['./sounds/excited.wav'],

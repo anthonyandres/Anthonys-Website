@@ -114,7 +114,7 @@ function onShowDrawingsClick(){if(!showDrawings){setShowDrawings(true); randomDr
               <div className='absolute z-2'>
                 <AnimatePresence>
                   {showLinks &&
-                    <motion.div className='border-0 translate-y-[-9vh] translate-x-[-8vw]' key={'linksWindow'} initial={{y:'50%', opacity: 0, scale: 0.5}} exit={{y:'50%', opacity: 0, scale: 0.5, transition: {duration: 0.1, ease: 'easeOut'}}} animate={{y: 0, opacity: 1, scale: 1}} transition={{duration: 0.2, ease: 'easeOut'}}>
+                    <motion.div className='border-0 translate-y-[-9vh] translate-x-[-11vw]' key={'linksWindow'} initial={{y:'50%', opacity: 0, scale: 0.5}} exit={{y:'50%', opacity: 0, scale: 0.5, transition: {duration: 0.1, ease: 'easeOut'}}} animate={{y: 0, opacity: 1, scale: 1}} transition={{duration: 0.2, ease: 'easeOut'}}>
                       <ComponentCard height={398} boundingRef={hiddenWindowBoundingRef}>
                         <LinksWindow showLinks={onShowLinksClick}></LinksWindow>
                         {showDrawings && <img className='pointer-events-none absolute -bottom-55 left-5 w-[400px]' src={'./assets/gif/grunge.gif'} alt='loading...' draggable={false} />}

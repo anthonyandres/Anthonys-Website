@@ -34,11 +34,13 @@ function ScaleIcon({children}:any) {
         
     }
 
+
     return (
     <motion.div
         transition={{duration: 0.1, type: 'spring'}}
         whileHover={{scale: 1.2}}
         onMouseEnter={handleMouseEnter}
+        whileTap={{ scale: 0.90}}
         style={{scale: springScale}}
     >
         {children}

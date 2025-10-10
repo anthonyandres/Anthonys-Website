@@ -3,6 +3,7 @@ import './windows.css'
 import { FaBook, FaCameraRetro, FaCode, FaEnvelopeOpenText, FaLink } from "react-icons/fa6"
 import { IconContext } from "react-icons"
 import localFont from 'next/font/local'
+import ScaleIconSilent from '../ScaleIconSilent'
 
 const gelica = localFont({
     src: '../../../../public/Fonts/Gelica/Gelica-Regular.otf',
@@ -44,27 +45,41 @@ function LandingWindow({showAbout = () => {}, showLinks = () => {}, showWork = (
 
 
           <div className='window-colors border-0 w-[80%] min-w-[400px] grid grid-cols-5'>
-            <IconContext.Provider value={{ className: 'border-0 size-[60%] transition duration-100 ease-in hover:scale-[110%]' }}>
-              <div className='border-0 inline-flex-center'>
-                <p className='text-2xl'>about</p>
-                <FaCameraRetro onClick={showAbout}/>   
-              </div>
-              <div className='border-0 inline-flex-center'>
+            <IconContext.Provider value={{ className: 'border-0 size-[60%] flex' }}>
+                <ScaleIconSilent>
+                <div className='border-0 flex flex-col items-center'>
+                  <FaCameraRetro onClick={showAbout}/>
+                  <p className='text-2xl'>about</p>
+                </div>
+                </ScaleIconSilent>   
+              
+              <ScaleIconSilent>
+              <div className='border-0 flex flex-col-reverse items-center'>
                 <p className='text-2xl'>links</p>
                 <FaLink onClick={showLinks}/>  
               </div>
-              <div className='border-0 inline-flex-center'>
+              </ScaleIconSilent>
+
+              <ScaleIconSilent>
+              <div className='border-0 flex flex-col-reverse items-center'>
                 <p className='text-2xl'>work</p>
                 <FaCode onClick={showWork}/> 
               </div>
-              <div className='border-0 inline-flex-center'>
+              </ScaleIconSilent>
+
+              <ScaleIconSilent>
+              <div className='border-0 flex flex-col-reverse items-center'>
                 <p className='text-2xl'>blog</p>
                 <FaBook onClick={showBlog}/>
               </div>
-              <div className='border-0 inline-flex-center'>
+              </ScaleIconSilent>
+
+              <ScaleIconSilent>
+              <div className='border-0 flex flex-col-reverse items-center'>
                 <p className='text-2xl'>contact</p>
                 <FaEnvelopeOpenText onClick={showContact}/>
               </div>
+              </ScaleIconSilent>
             </IconContext.Provider>
           </div>  
 
