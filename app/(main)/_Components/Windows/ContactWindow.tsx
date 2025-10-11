@@ -3,6 +3,7 @@ import './windows.css'
 import { IconContext } from 'react-icons'
 import {FaMinimize, FaRegFaceLaugh, FaRegFaceLaughWink, FaRegFaceMeh } from 'react-icons/fa6'
 import localFont from 'next/font/local'
+import ScaleIconSilent from '../ScaleIconSilent'
 
 const gelica = localFont({
     src: '../../../../public/Fonts/Gelica/Gelica-Regular.otf',
@@ -57,15 +58,17 @@ function LinksWindow({showContact = () => {}}: Props) {
                     <p>The easiest way to contact me is through email. However, you may also be able to reach me through other means!</p>
                     <p className='text-xs mt-2'>(psst check the links window)</p>        
                 </div> 
-                <div className='text-center border-0'>
+                <div className='text-center border-0 flex flex-col items-center'>
+                    <ScaleIconSilent>
                     <button onClick={onEmailClick}>
-                        <IconContext.Provider value={{ className: 'border-0 size-40 transition duration-100 ease-in hover:scale-[110%] mt-7' }}>
+                        <IconContext.Provider value={{ className: 'border-0 size-40 mt-4' }}>
                         {!isEmail && !isEmailClicked && <FaRegFaceMeh onMouseEnter={onEmailEnter} onMouseLeave={onEmailLeave} />}
                         {isEmail && !isEmailClicked && <FaRegFaceLaugh onMouseEnter={onEmailEnter} onMouseLeave={onEmailLeave} />}
                         {isEmailClicked && <FaRegFaceLaughWink/>}
                         </IconContext.Provider>
                     </button>
-                    <p>click to send me an email!</p>  
+                    </ScaleIconSilent>
+                    <p className='mt-2'>click to send me an email!</p>  
                 </div>            
             </div>
             

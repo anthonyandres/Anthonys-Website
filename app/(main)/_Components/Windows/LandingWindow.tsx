@@ -47,37 +47,37 @@ function LandingWindow({showAbout = () => {}, showLinks = () => {}, showWork = (
           <div className='window-colors border-0 w-[80%] min-w-[400px] grid grid-cols-5'>
             <IconContext.Provider value={{ className: 'border-0 size-[60%] flex' }}>
                 <ScaleIconSilent>
-                <div className='border-0 flex flex-col items-center'>
-                  <FaCameraRetro onClick={showAbout}/>
+                <div className='border-0 flex flex-col items-center' onClick={showAbout}>
+                  <FaCameraRetro/>
                   <p className='text-2xl'>about</p>
                 </div>
                 </ScaleIconSilent>   
               
               <ScaleIconSilent>
-              <div className='border-0 flex flex-col-reverse items-center'>
+              <div className='border-0 flex flex-col-reverse items-center' onClick={showLinks}>
                 <p className='text-2xl'>links</p>
-                <FaLink onClick={showLinks}/>  
+                <FaLink/>  
               </div>
               </ScaleIconSilent>
 
               <ScaleIconSilent>
-              <div className='border-0 flex flex-col-reverse items-center'>
+              <div className='border-0 flex flex-col-reverse items-center' onClick={showWork}>
                 <p className='text-2xl'>work</p>
-                <FaCode onClick={showWork}/> 
+                <FaCode/> 
               </div>
               </ScaleIconSilent>
 
               <ScaleIconSilent>
-              <div className='border-0 flex flex-col-reverse items-center'>
+              <div className='border-0 flex flex-col-reverse items-center' onClick={showBlog}>
                 <p className='text-2xl'>blog</p>
-                <FaBook onClick={showBlog}/>
+                <FaBook/>
               </div>
               </ScaleIconSilent>
 
               <ScaleIconSilent>
-              <div className='border-0 flex flex-col-reverse items-center'>
+              <div className='border-0 flex flex-col-reverse items-center' onClick={showContact}>
                 <p className='text-2xl'>contact</p>
-                <FaEnvelopeOpenText onClick={showContact}/>
+                <FaEnvelopeOpenText/>
               </div>
               </ScaleIconSilent>
             </IconContext.Provider>

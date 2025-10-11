@@ -8,7 +8,7 @@ function ScaleIconSilent({children}:any) {
     <motion.div
         transition={{duration: 0.1, type: 'spring'}}
         whileHover={{scale: 1.2}}
-        whileTap={{ scale: 0.95}}
+        whileTap={{ scale: 1.0}}
         style={{scale: springScale}}
     >
         {children}

@@ -4,7 +4,6 @@ import { IconContext } from 'react-icons'
 import {FaMinimize } from 'react-icons/fa6'
 import localFont from 'next/font/local'
 import HoverSoundBox from '../../../../public/sounds/HoverSoundBox'
-import TiltCard from '../TiltCard'
 
 const gelica = localFont({
     src: '../../../../public/Fonts/Gelica/Gelica-Regular.otf',

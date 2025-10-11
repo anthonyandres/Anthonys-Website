@@ -2,6 +2,11 @@ import React from 'react'
 import './windows.css'
 import { IconContext } from 'react-icons'
 import {FaMinimize } from 'react-icons/fa6'
+import localFont from 'next/font/local'
+
+const gelica = localFont({
+  src: '../../../../public/Fonts/Gelica/Gelica-Regular.otf',
+})
 
 interface Props{
   showBlog: ()=> void
@@ -17,13 +22,13 @@ function LinksWindow({showBlog = () => {}}: Props) {
                     <FaMinimize onClick={showBlog}/>
                 </div>
                 </IconContext.Provider>
-        <div className='flex flex-col gap-y-0 window'>
+        <div className='flex flex-col gap-y-0 window border-0 h-full'>
             <div className='tertiary-window-colors flex flex-row landing-header text-amber-100 p-20'>
                 <p className='pl-6 text-2xl text-center'>blog</p>
             </div>
-            <div className='window-colors overflow-hidden border-0 h-full'>
-                <div className='border-0'>
-                    <p>this is the main body </p>    
+            <div className={`window-colors overflow-hidden border-0 h-full ${gelica.className}`}>
+                <div className='border-0 flex justify-center items-center h-full'>
+                    <p className='text-3xl'>coming soon!!!</p>    
                 </div>           
             </div>
             
