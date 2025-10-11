@@ -40,46 +40,52 @@ function WorkWindow({showWork = () => {}}: Props) {
             
         
         <div className='window-colors border-0 p-4 h-full overflow-y-auto scrollbar-colors'>
-          <p>Here are a few things I&apos;m familiar with, as well as a few things I&apos;ve worked on...</p>
-          <div className='grid grid-cols-2 grid-rows-1 border-0'>
-            <div className='flex justify-left flex-col'>
-              <h2 className={`text-[200%] secondary-window-colors ${gelicaBold.className}`}>Tools</h2>
-              <div className='border-0 flex flex-wrap justify-center'>
-                <HoverSoundBox>GitHub</HoverSoundBox>
-                <HoverSoundBox>Kubernetes</HoverSoundBox>
-                <HoverSoundBox>Microsoft Azure</HoverSoundBox>
-                <HoverSoundBox>gRPC</HoverSoundBox>
-                <HoverSoundBox>RabbitMQ</HoverSoundBox>
-                <HoverSoundBox>Trello</HoverSoundBox>
-                <HoverSoundBox>Figma</HoverSoundBox>
-                <HoverSoundBox>JUnit</HoverSoundBox>
-                <HoverSoundBox>PITest</HoverSoundBox>
-                <HoverSoundBox>Blender</HoverSoundBox>
-                <HoverSoundBox>Krita</HoverSoundBox>
-                <HoverSoundBox>Davinci Resolve</HoverSoundBox>
-                <HoverSoundBox>GIMP</HoverSoundBox>
-                <HoverSoundBox>DarkTable</HoverSoundBox>
+          <div className='window-colors border-3 border-dashed rounded-2xl p-4'>
+            <p>Here are a few things I&apos;m familiar with, as well as a few things I&apos;ve worked on...</p>
+            <div className='grid grid-cols-2 grid-rows-1 border-0'>
+              <div className='flex justify-left flex-col'>
+                <h2 className={`text-[200%] secondary-window-colors ${gelicaBold.className}`}>Tools</h2>
+                <div className='border-0 flex flex-wrap justify-center'>
+                  <HoverSoundBox>GitHub</HoverSoundBox>
+                  <HoverSoundBox>Kubernetes</HoverSoundBox>
+                  <HoverSoundBox>Microsoft Azure</HoverSoundBox>
+                  <HoverSoundBox>gRPC</HoverSoundBox>
+                  <HoverSoundBox>RabbitMQ</HoverSoundBox>
+                  <HoverSoundBox>Trello</HoverSoundBox>
+                  <HoverSoundBox>Figma</HoverSoundBox>
+                  <HoverSoundBox>JUnit</HoverSoundBox>
+                  <HoverSoundBox>PITest</HoverSoundBox>
+                  <HoverSoundBox>Blender</HoverSoundBox>
+                  <HoverSoundBox>Krita</HoverSoundBox>
+                  <HoverSoundBox>Davinci Resolve</HoverSoundBox>
+                  <HoverSoundBox>GIMP</HoverSoundBox>
+                  <HoverSoundBox>DarkTable</HoverSoundBox>
+                </div>
               </div>
+                
+              <div className='flex justify-left flex-col'>
+                <h2 className={`text-[200%] secondary-window-colors ${gelicaBold.className}`}>Development</h2>
+                <div className='border-0 flex flex-wrap justify-center'>
+                  <HoverSoundBox>C</HoverSoundBox>
+                  <HoverSoundBox>Java</HoverSoundBox>
+                  <HoverSoundBox>Python</HoverSoundBox>
+                  <HoverSoundBox>SQL</HoverSoundBox>
+                  <HoverSoundBox>VHDL</HoverSoundBox>
+                  <HoverSoundBox>MatLab</HoverSoundBox>
+                  <HoverSoundBox>HTML</HoverSoundBox>
+                  <HoverSoundBox>CSS/CSSTailwind</HoverSoundBox>
+                  <HoverSoundBox>JavaScript/TypeScript</HoverSoundBox>
+                  <HoverSoundBox>IntelliJ</HoverSoundBox>
+                  <HoverSoundBox>Pycharm</HoverSoundBox>
+                  <HoverSoundBox>Eclipse</HoverSoundBox>
+                  <HoverSoundBox>Visual Studio Code</HoverSoundBox>
+                </div>
+              </div>  
             </div>
-              
-            <div className='flex justify-left flex-col'>
-              <h2 className={`text-[200%] secondary-window-colors ${gelicaBold.className}`}>Development</h2>
-              <div className='border-0 flex flex-wrap justify-center'>
-                <HoverSoundBox>C</HoverSoundBox>
-                <HoverSoundBox>Java</HoverSoundBox>
-                <HoverSoundBox>Python</HoverSoundBox>
-                <HoverSoundBox>SQL</HoverSoundBox>
-                <HoverSoundBox>VHDL</HoverSoundBox>
-                <HoverSoundBox>MatLab</HoverSoundBox>
-                <HoverSoundBox>HTML</HoverSoundBox>
-                <HoverSoundBox>CSS/CSSTailwind</HoverSoundBox>
-                <HoverSoundBox>JavaScript/TypeScript</HoverSoundBox>
-                <HoverSoundBox>IntelliJ</HoverSoundBox>
-                <HoverSoundBox>Pycharm</HoverSoundBox>
-                <HoverSoundBox>Eclipse</HoverSoundBox>
-                <HoverSoundBox>Visual Studio Code</HoverSoundBox>
-              </div>
-            </div>  
+
+            <div>
+              <h2 className={`text-[200%] secondary-window-colors ${gelicaBold.className}`}>Projects</h2>
+            </div>
           </div>          
         </div>
             
