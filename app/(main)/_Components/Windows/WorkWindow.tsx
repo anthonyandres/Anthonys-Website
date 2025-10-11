@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './windows.css'
 import { IconContext } from 'react-icons'
-import {FaMinimize } from 'react-icons/fa6'
+import {FaMinimize, FaRegFaceGrinTongue, FaRegFaceLaughWink, FaRegFaceMeh,  } from 'react-icons/fa6'
 import localFont from 'next/font/local'
 import HoverSoundBox from '../../../../public/sounds/HoverSoundBox'
+import ScaleIconSilent from '../ScaleIconSilent'
 
 const gelica = localFont({
     src: '../../../../public/Fonts/Gelica/Gelica-Regular.otf',
@@ -23,6 +24,22 @@ interface Props{
 
 
 function WorkWindow({showWork = () => {}}: Props) {
+  const [isProject, setIsPoject] = useState(false)
+  const [isProjectClicked, setIsPojectClicked] = useState(false)
+
+  const openInNewTab = (url:string) => {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+    if (newWindow) newWindow.opener = null
+  }
+
+  const excited = new Howl({
+    src: ['./sounds/excited.wav'],
+    volume: 1.5
+  })
+
+  function onProjectEnter(){if(!isProject){setIsPoject(true); }}
+  function onProjectLeave(){if(isProject){setIsPoject(false); }}
+  function projectClick(){openInNewTab('https://anthonyandres.github.io/'); excited.play();}
 
   return (
     <div className={`window-colors prevent-select h-[392px] w-[40vw] min-w-150 max-w-[960px] border-0 rounded-[0px] ${gelica.className}`}>
@@ -82,9 +99,20 @@ function WorkWindow({showWork = () => {}}: Props) {
                 </div>
               </div>  
             </div>
-
+            <hr className='mt-5 mb-2 window-colors border-2 rounded-2xl'/>
             <div>
               <h2 className={`text-[200%] secondary-window-colors ${gelicaBold.className}`}>Projects</h2>
+              <p>most of my relevant technical projects done in school can be found on my GitHub, and projects I did outside of school can be found on my other page:</p>
+              <p className='mt-5 text-[13px] text-center'>(its not that flashy, but I was lazy and still am lazy)</p>
+              <div className='border-0 flex flex-col items-center' onClick={()=>projectClick()}>
+                <ScaleIconSilent>
+                    <IconContext.Provider value={{ className: 'border-0 size-30 mb-3 mt-3' }}>
+                    {!isProject && <FaRegFaceMeh onMouseEnter={onProjectEnter} onMouseLeave={onProjectLeave} />}
+                    {isProject && <FaRegFaceGrinTongue onMouseEnter={onProjectEnter} onMouseLeave={onProjectLeave} />}
+                    </IconContext.Provider>
+                </ScaleIconSilent>
+                <p>check out some of my more fun projects!</p>
+              </div>
             </div>
           </div>          
         </div>

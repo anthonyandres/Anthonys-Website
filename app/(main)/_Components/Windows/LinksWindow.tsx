@@ -27,7 +27,7 @@ function LinksWindow({showLinks = () => {}}: Props) {
         press.play()
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
         if (newWindow) newWindow.opener = null
-}
+    }
 
   return (
     <div className='window-colors prevent-select h-[100%] w-[20vw] min-w-150 max-w-[960px] border-0 rounded-[0px]'>
