@@ -43,8 +43,8 @@ const getSortedArticles = (): ArticleItem[] => { // this function will return a 
     })
 }
 export const getCategoriedArticles = (): Record<string, ArticleItem[]> => { // loop through articles and place them in arrays based off of categories
-    const sortedArticles = getSortedArticles()
-    const categorisedArticles: Record<string, ArticleItem[]> = {}
+    const sortedArticles = getSortedArticles() // get list of article objects
+    const categorisedArticles: Record<string, ArticleItem[]> = {} // initialize array for categorized articles
 
     sortedArticles.forEach((article) => {
         if(!categorisedArticles[article.category]){
@@ -54,8 +54,19 @@ export const getCategoriedArticles = (): Record<string, ArticleItem[]> => { // l
     })
 
     return categorisedArticles // return object containing articles in an array based off of categories organized with their respective key
-
 }
+
+// this function is used for the generateStaticParams() function
+export const getArticleIds = (): ArticleItem[] => {
+    const sortedArticles = getSortedArticles() // get list of article objects
+    const categorisedArticles: ArticleItem[] = [] // initialize array for categorized articles
+
+    sortedArticles.forEach((article) => {
+        categorisedArticles.push(article)
+    })
+    return categorisedArticles // return object containing articles in an array
+}
+
 
 export const getArticleData = async (id: string) => {
     const fullPath = path.join(articlesDirectory, `${id}.md`) // get path of article

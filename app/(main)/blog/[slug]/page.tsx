@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { getArticleData } from "@/lib/articles";
+import { getArticleData, getArticleIds, getCategoriedArticles } from "@/lib/articles";
 
 const Article = async ({params}: {params: Promise<{slug: string}>}) => {
-    const articleData = await getArticleData((await params).slug)
+    const articleData = await getArticleData((await params).slug) // get article data based off of the url which is the id/name of the article file
     console.log("slug: " + (await params).slug)
 
     return(
@@ -19,3 +19,7 @@ const Article = async ({params}: {params: Promise<{slug: string}>}) => {
 }
 
 export default Article
+
+export async function generateStaticParams(){
+    return getArticleIds()
+}
