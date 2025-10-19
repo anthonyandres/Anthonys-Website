@@ -3,6 +3,7 @@ import './windows.css'
 import { IconContext } from 'react-icons'
 import {FaMinimize } from 'react-icons/fa6'
 import localFont from 'next/font/local'
+import Link from 'next/link'
 
 const gelica = localFont({
   src: '../../../../public/Fonts/Gelica/Gelica-Regular.otf',
@@ -28,7 +29,9 @@ function LinksWindow({showBlog = () => {}}: Props) {
             </div>
             <div className={`window-colors overflow-hidden border-0 h-full ${gelica.className}`}>
                 <div className='border-0 flex justify-center items-center h-full'>
-                    <p className='text-3xl'>coming soon!!!</p>    
+                    <Link href="/blog">
+                      <p className='text-3xl'>coming soon!!!</p>
+                    </Link>     
                 </div>           
             </div>
             

@@ -48,6 +48,39 @@
   --font-mono: var(--font-geist-mono);
 } */
 
+.article{
+  @apply flex flex-col gap-3 text-lg tracking-wide mb-20
+}
+
+.blog-colors {
+    border-color: var(--border-color);
+    /* border-width: 2px; */
+    /*background: var(--window-background-color);*/
+    color: var(--primary-text-color)
+}
+
+.bgbg{
+  background: var(--bgbg-color);
+  color: var(--primary-text-color);
+}
+
+.secondary-window-colors{
+  color: var(--secondary-text-color)
+}
+
+.tertiary-window-colors{
+  color: var(--tertiary-text-color)
+}
+
+.secondary-background-colors{
+  background: var(--secondary-background-color);
+}
+
+.scrollbar-colors{
+  scrollbar-color: var(--scrollbar-color) var(--window-background-color);
+  scrollbar-width: thin;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #486a4f;

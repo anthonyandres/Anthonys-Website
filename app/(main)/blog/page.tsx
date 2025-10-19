@@ -1,44 +1,40 @@
-/*
-folders with square brackets (eg. [slug]) creates a 'Dynamic Route Segment' (DRS).
+import localFont from "next/font/local";
+import ArticleListItem from "../_Components/ArticleListItem";
+import { getCategoriedArticles } from "@/lib/articles";
 
-DRS are used when you don't know the exact route segment names ahead of time
-and want to create routes from dynamic data that are filled in at request time or prerendered
-at build time.
+const gelica = localFont({
+    src: '../../../public/Fonts/Gelica/Gelica-Regular.otf',
+})
 
-Dynamic Segments are passed as the `params` prop to `layout', `page`, `route`, and
-`generateMetadata` functions.
+const gelicaBold = localFont({
+    src: '../../../public/Fonts/Gelica/Gelica-Bold.otf',
+})
 
-in this project I have the following directory:
-`app/(main)/blog/[slug]/page.tsx`
+const gelicaLight = localFont({
+    src: '../../../public/Fonts/Gelica/Gelica-Light.otf',
+})
 
-the url can change depending on the value that params takes:
-URL: /blog/a
-params: { slug: 'a' }
+const BlogPage = () => {
+    const articles = getCategoriedArticles()
 
-what's nice about this, is that the route remains the same but the URL can change depending
-on the params:
-the route is `app/(main)/blog/[slug]/page.tsx`
-
-
-*/
-
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ slug: string }>
-}) {
-  const { slug } = await params
-  return <div>
-            My Post: {slug}
-        </div>
+    console.log(articles)
+    return(
+        <section className={`blog-colors mx-auto w-11/12 md:w-1/2 mt-20 flex flex-col gap-16 mb-20 ${gelicaBold.className}`}>
+            <header className="text-6xl text-center">
+                <h1>my blog</h1>
+            </header>
+            <section className="md:grid md:grid-cols-2 flex flex-col gap-10">
+                {articles !== null && 
+                    Object.keys(articles).map((article) => (
+                    <ArticleListItem 
+                        category={article}
+                        articles={articles[article]}
+                        key={article}
+                    />
+                ))}
+            </section>
+        </section>
+    )
 }
 
-/*
-explanation of above:
-
-
-
-since the `params` prop is a promise. You must use `async`/`await` or React's `use` function to
-access the values.
-
-*/
+export default BlogPage

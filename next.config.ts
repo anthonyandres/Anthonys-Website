@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   basePath: '/Anthonys-Website',
-  output: 'export',
+  output: 'standalone',
   reactStrictMode: true,
 }
 
