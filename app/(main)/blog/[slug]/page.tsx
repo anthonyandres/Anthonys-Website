@@ -24,5 +24,7 @@ export default async function Article({params}: {params: Promise<{slug: string}>
     )
 }
 
+//TODO: fix styling, also add the dark/light mode, mute, and drawing buttons on the top right
+
 //export default Article
 //const Article = async ({params}: {params: Promise<{slug: string}>}) => 
