@@ -4,7 +4,7 @@ import { IconContext } from 'react-icons'
 import {FaMinimize } from 'react-icons/fa6'
 import Link from 'next/link'
 import ScaleIconSilent from '../ScaleIconSilent'
-
+import { SlSpeech } from "react-icons/sl";
 interface Props{
   showBlog: ()=> void
 }
@@ -26,9 +26,13 @@ function LinksWindow({showBlog = () => {}}: Props) {
             <div className={`window-colors overflow-hidden border-0 h-full gelica`}>
                 <div className='border-0 flex justify-center items-center h-full'>
                     <ScaleIconSilent>
-                    <Link href="/blog">
-                      <p className='text-3xl'>coming soon!!!</p>
-                    </Link>
+                    
+                      <Link href="/blog">
+                      <IconContext.Provider value={{className: 'size-[120px]'}}> 
+                        <SlSpeech />
+                        </IconContext.Provider>
+                      </Link>
+                    
                     </ScaleIconSilent>     
                 </div>           
             </div>
