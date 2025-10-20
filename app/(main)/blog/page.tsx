@@ -1,6 +1,6 @@
 import localFont from "next/font/local";
 import ArticleListItem from "../_Components/ArticleListItem";
-import { getCategoriedArticles } from "@/lib/articles";
+import { getArticleSlugs, getCategoriedArticles } from "@/lib/articles";
 
 const gelica = localFont({
     src: '../../../public/Fonts/Gelica/Gelica-Regular.otf',
@@ -16,8 +16,9 @@ const gelicaLight = localFont({
 
 const BlogPage = () => {
     const articles = getCategoriedArticles()
-
-    console.log(articles)
+    const articlesID = getArticleSlugs()
+    //console.log(articles)
+    console.log(articlesID)
     return(
         <section className={`blog-colors mx-auto w-11/12 md:w-1/2 mt-20 flex flex-col gap-16 mb-20 ${gelicaBold.className}`}>
             <header className="text-6xl text-center">

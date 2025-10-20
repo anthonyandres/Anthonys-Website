@@ -5,7 +5,7 @@ import moment from "moment"
 import { remark } from "remark"
 import html from "remark-html"
 
-import type { ArticleItem } from "@/types" // import ArticleItem type
+import type { ArticleItem, ArticleId } from "@/types" // import ArticleItem type
 
 const articlesDirectory = path.join(process.cwd(), "articles") // get absolute path of articles directory using path.join()
 
@@ -56,15 +56,21 @@ export const getCategoriedArticles = (): Record<string, ArticleItem[]> => { // l
     return categorisedArticles // return object containing articles in an array based off of categories organized with their respective key
 }
 
-// this function is used for the generateStaticParams() function
-export const getArticleIds = (): ArticleItem[] => {
+// this function is used for the generateStaticParams() function, it gets the id of each article which would be the [slug] for each page needed to pre-generate them using generateStaticParams()
+export const getArticleSlugs = (): ArticleId[] => {
     const sortedArticles = getSortedArticles() // get list of article objects
     const categorisedArticles: ArticleItem[] = [] // initialize array for categorized articles
+    const articleIds: ArticleId[] = []
 
     sortedArticles.forEach((article) => {
         categorisedArticles.push(article)
     })
-    return categorisedArticles // return object containing articles in an array
+
+    categorisedArticles.forEach((articleItem) => {
+        const slug = {slug: articleItem.id}
+        articleIds.push(slug)
+    })
+    return articleIds // return object containing articles in an array
 }
 
 
