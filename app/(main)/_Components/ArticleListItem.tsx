@@ -21,11 +21,11 @@ interface Props{
 const ArticleListItem = ({category, articles}: Props) => {
 
     return(
-        <div className={`border-1 blog-colors flex items-center flex-col gap-5 ${gelica.className} `}>
+        <div className={`border-0 blog-colors flex items-center flex-col gap-5 transition duration-150`}>
             <h2 className="text-4xl">{category}</h2>
                 <div className="flex flex-col gap-2.5 text-lg">
                     {articles.map((article, id) => 
-                        <Link href={`blog/${article.id}`} key={id} className={`window-colors hover:text-amber transition duration-150 ${gelicaBold.className}`}>
+                        <Link href={`blog/${article.id}`} key={id} className={`hover:text-amber`}>
                             {article.title}
                         </Link>
                     )}

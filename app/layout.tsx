@@ -22,3 +22,15 @@ export default function RootLayout({
     </html>
   );
 }
+
+// const gelica = localFont({
+//     src: '../../../../public/Fonts/Gelica/Gelica-Regular.otf',
+// })
+
+// const gelicaBold = localFont({
+//     src: '../../../../public/Fonts/Gelica/Gelica-Bold.otf',
+// })
+
+// const gelicaLight = localFont({
+//     src: '../../../../public/Fonts/Gelica/Gelica-Light.otf',
+// })

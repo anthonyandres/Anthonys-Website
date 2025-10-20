@@ -1,10 +1,48 @@
+/* @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Fraunces:opsz,wght,SOFT,WONK@9..144,700,100,1&family=Noto+Sans+Mono:wght@500&display=swap'); */
 @import "tailwindcss";
 
-/* @font-face {
+@font-face {
+  font-family: "gelica";
+  src: url('../public/Fonts/Gelica/Gelica-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: "gelicaBold";
+  src: url('../public/Fonts/Gelica/Gelica-Bold.otf') format('opentype');
+}
+@font-face {
+  font-family: "gelicaItalic";
+  src: url('../public/Fonts/Gelica/Gelica-Italic.otf') format('opentype');
+}
+@font-face {
+  font-family: "gelicaLight";
+  src: url('../public/Fonts/Gelica/Gelica-Extra-Light.otf') format('opentype');
+}
+@font-face {
+  font-family: "cabinetGrotesk";
+  src: url('../public/Fonts/CabinetGrotesk/CabinetGrotesk-Medium.otf') format('opentype');
+}
+
+.gelica{
   font-family: gelica;
-  src: url('../public/Fonts/Gelica/Gelica-Regular.otf');
-  font-family: cabinetGrotesk;
-  src: url('../public/Fonts/CabinetGrotesk/CabinetGrotesk-Medium.otf')
+}
+.gelicaBold{
+  font-family: gelicaBold;
+}
+.gelicaItalic{
+  font-family: gelicaItalic;
+}
+.gelicaLight{
+  font-family: gelicaLight;
+}
+
+/* @theme {
+  --font-fraunces:"Fraunces", serif
+}
+@theme {
+  --font-noto:"Noto Sans Mono", monospace
+}
+@theme {
+  --font-dm:"DM Serif Text", serif
 } */
 
 :root {
@@ -13,6 +51,7 @@
   --secondary-background-color: #dadbdf;
   --neutral-color: #414141;
   --primary-text-color: #414141;
+  --primary-text-blog-color: #f7f4db;
   --secondary-text-color: #e69e41;
   --tertiary-text-color: #f7f4db;
   --border-color: #747474f5;
@@ -49,14 +88,41 @@
 } */
 
 .article{
-  @apply flex flex-col gap-3 text-lg tracking-wide mb-20
+  @apply flex flex-col gap-3 text-lg tracking-wide mb-20;
+  font-family: gelica;
+}
+
+
+
+.article > h1 {
+  @apply text-7xl text-center tracking-tight mb-10 mt-10;
+}
+
+.article > h2 {
+  @apply text-3xl tracking-tight mt-10;
+}
+
+.article > ol {
+  @apply list-decimal flex flex-col mx-10 gap-2;
+}
+
+.article > ul {
+  @apply list-disc flex flex-col mx-10 gap-2;
+}
+
+.article > pre {
+  @apply p-5 overflow-auto;
+}
+
+.article > blockquote {
+  @apply pl-5 italic border-l-2;
 }
 
 .blog-colors {
     border-color: var(--border-color);
     /* border-width: 2px; */
     /*background: var(--window-background-color);*/
-    color: var(--primary-text-color)
+    color: var(--primary-text-blog-color)
 }
 
 .bgbg{
@@ -164,6 +230,7 @@ h1+h1 {
   --secondary-background-color: #484b6a;
   --neutral-color:#44475a;
   --primary-text-color: #a8b1c0;
+  --primary-text-blog-color: #a8b1c0;
   --secondary-text-color:	#e47070;
   --tertiary-text-color: #a8b1c0;
   --border-color: #747474f5;

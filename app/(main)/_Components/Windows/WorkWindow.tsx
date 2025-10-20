@@ -2,21 +2,8 @@ import React, { useState } from 'react'
 import './windows.css'
 import { IconContext } from 'react-icons'
 import {FaMinimize, FaRegFaceGrinTongue, FaRegFaceLaughWink, FaRegFaceMeh,  } from 'react-icons/fa6'
-import localFont from 'next/font/local'
 import HoverSoundBox from '../../../../public/sounds/HoverSoundBox'
 import ScaleIconSilent from '../ScaleIconSilent'
-
-const gelica = localFont({
-    src: '../../../../public/Fonts/Gelica/Gelica-Regular.otf',
-})
-
-const gelicaBold = localFont({
-    src: '../../../../public/Fonts/Gelica/Gelica-Bold.otf',
-})
-
-const gelicaLight = localFont({
-    src: '../../../../public/Fonts/Gelica/Gelica-Light.otf',
-})
 
 interface Props{
   showWork: ()=> void
@@ -42,7 +29,7 @@ function WorkWindow({showWork = () => {}}: Props) {
   function projectClick(){openInNewTab('https://anthonyandres.github.io/'); excited.play();}
 
   return (
-    <div className={`window-colors prevent-select h-[392px] w-[40vw] min-w-150 max-w-[960px] border-0 rounded-[0px] ${gelica.className}`}>
+    <div className={`window-colors prevent-select h-[392px] w-[40vw] min-w-150 max-w-[960px] border-0 rounded-[0px] gelica`}>
       <IconContext.Provider value={{ className: 'tertiary-window-colors justify-right border-0 size-[20px] transition duration-100 ease-in hover:scale-[110%]' }}>
       <div className='z-10 absolute gap-x-16 justify-center top-3 right-3'>
           <FaMinimize onClick={showWork}/>
@@ -61,7 +48,7 @@ function WorkWindow({showWork = () => {}}: Props) {
             <p>Here are a few things I&apos;m familiar with, as well as a few things I&apos;ve worked on...</p>
             <div className='grid grid-cols-2 grid-rows-1 border-0'>
               <div className='flex justify-left flex-col'>
-                <h2 className={`text-[200%] secondary-window-colors ${gelicaBold.className}`}>Tools</h2>
+                <h2 className={`text-[200%] secondary-window-colors gelicaBold`}>Tools</h2>
                 <div className='border-0 flex flex-wrap justify-center'>
                   <HoverSoundBox>GitHub</HoverSoundBox>
                   <HoverSoundBox>Kubernetes</HoverSoundBox>
@@ -81,7 +68,7 @@ function WorkWindow({showWork = () => {}}: Props) {
               </div>
                 
               <div className='flex justify-left flex-col'>
-                <h2 className={`text-[200%] secondary-window-colors ${gelicaBold.className}`}>Development</h2>
+                <h2 className={`text-[200%] secondary-window-colors gelicaBold`}>Development</h2>
                 <div className='border-0 flex flex-wrap justify-center'>
                   <HoverSoundBox>C</HoverSoundBox>
                   <HoverSoundBox>Java</HoverSoundBox>
@@ -101,7 +88,7 @@ function WorkWindow({showWork = () => {}}: Props) {
             </div>
             <hr className='mt-5 mb-2 window-colors border-2 rounded-2xl'/>
             <div>
-              <h2 className={`text-[200%] secondary-window-colors ${gelicaBold.className}`}>Projects</h2>
+              <h2 className={`text-[200%] secondary-window-colors gelicaBold`}>Projects</h2>
               <p>most of my relevant technical projects done in school can be found on my GitHub, and projects I did outside of school can be found on my other page:</p>
               <p className='mt-5 text-[13px] text-center'>(its not that flashy, but I was lazy and still am lazy)</p>
               <div className='border-0 flex flex-col items-center' onClick={()=>projectClick()}>

@@ -73,7 +73,7 @@ function DarkMuteVolumeComponents({children}:any) {
     function onMuteSoundClick(){if(!isMute){setIsMute(true);  Howler.mute(true)}else{setIsMute(false); soundOn.play(); Howler.mute(false)}} //Howler.mute(false): all howler global methods are called using `Howler`
     
     return (
-        <div className='z-1 main-bg-colors h-dvh overflow-hidden' data-theme={isDark ? 'dark' : 'light'}>
+        <div className='border-0 z-1 main-bg-colors h-full min-h-[100vh]' data-theme={isDark ? 'dark' : 'light'}>
             <IconContext.Provider value={{ className: 'tertiary-window-colors border-0 size-10 transition duration-100 ease-in hover:scale-[110%] ml-7 mt-4' }}>
             <div className='absolute ml-14'>
                 {!isDark && <FaSun onClick={onDarkModeClick}/>}

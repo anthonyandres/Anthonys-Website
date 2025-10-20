@@ -2,16 +2,7 @@ import React, { useState } from 'react'
 import './windows.css'
 import { IconContext } from 'react-icons'
 import {FaMinimize, FaRegFaceLaugh, FaRegFaceLaughWink, FaRegFaceMeh } from 'react-icons/fa6'
-import localFont from 'next/font/local'
 import ScaleIconSilent from '../ScaleIconSilent'
-
-const gelica = localFont({
-    src: '../../../../public/Fonts/Gelica/Gelica-Regular.otf',
-})
-
-const gelicaBold = localFont({
-    src: '../../../../public/Fonts/Gelica/Gelica-Bold.otf',
-})
 
 interface Props{
   showContact: ()=> void
@@ -40,7 +31,7 @@ function LinksWindow({showContact = () => {}}: Props) {
     function onEmailClick(){setIsEmailClicked(true); excited.play(); window.location.href = 'mailto:anthonyandres1881@gmail.com';}
 
   return (
-    <div className={`window-colors prevent-select h-[596px] max-h-[596px] w-[30vw] min-w-[600px] max-w-[600px] border-0 rounded-[0px] ${gelica.className}`}>
+    <div className={`window-colors prevent-select h-[596px] max-h-[596px] w-[30vw] min-w-[600px] max-w-[600px] border-0 rounded-[0px] gelica`}>
         <IconContext.Provider value={{ className: 'tertiary-window-colors justify-right border-0 size-[20px] transition duration-100 ease-in hover:scale-[110%]' }}>
             <div className='z-10 absolute gap-x-16 justify-center top-3 right-3'>
                 <FaMinimize onClick={showContact}/>
@@ -51,7 +42,7 @@ function LinksWindow({showContact = () => {}}: Props) {
                 <p className='pl-6 text-2xl text-center'>contact</p>
             </div>
             <div className='window-colors grid-rows-3 gap-y-0 overflow-hidden border-0 p-15 h-full'>
-                <div className={`secondary-window-colors ${gelicaBold.className}`}>
+                <div className={`secondary-window-colors gelica`}>
                     <h1>Contact me!</h1>    
                 </div>
                 <div className='flex-row justify-center text-center'>

@@ -3,13 +3,8 @@ import './windows.css'
 import { IconContext } from 'react-icons'
 import {FaGithub, FaLinkedin, FaMinimize, FaPalette, FaSquareInstagram, FaYoutube } from 'react-icons/fa6'
 import { MdLibraryMusic } from "react-icons/md"
-import localFont from 'next/font/local'
 import { Howl } from 'howler'
 import ScaleIcon from '../ScaleIcon'
-
-const gelica = localFont({
-  src: '../../../../public/Fonts/Gelica/Gelica-Regular.otf',
-})
 
 interface Props{
   showLinks: ()=> void
@@ -40,7 +35,7 @@ function LinksWindow({showLinks = () => {}}: Props) {
             <div className='tertiary-window-colors flex flex-row landing-header text-amber-100 p-20'>
                 <p className='pl-6 text-2xl text-center'>links</p>
             </div>
-            <div className={`window-colors overflow-hidden border-0 grid text-xl grid-cols-3 h-full p-7 pt-12 ${gelica.className}`}>
+            <div className={`window-colors overflow-hidden border-0 grid text-xl grid-cols-3 h-full p-7 pt-12 gelica`}>
                 <IconContext.Provider value={{ className: 'border-0 size-[80px]' }}>
                 <ScaleIcon>
                     <div className='border-0 flex flex-col items-center' onClick={()=>openInNewTab('https://github.com/anthonyandres')}>
