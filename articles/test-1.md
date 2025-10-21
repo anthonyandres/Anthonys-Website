@@ -1,22 +1,47 @@
 ---
-title: "hello all"
+title: "Markdown Cheat Sheet"
 category: "learning things"
 date: "19-10-2025"
 ---
 
-# How to Write Clean Code
+# Anthony's Blog Markdown Cheat Sheet
 
-![Art](./anthony.jpg)
+![Image](./blog-images/milo.jpg)
 
-Writing clean code is an essential skill for any developer. It not only makes your code more readable and maintainable but also makes it easier for others (and future you) to understand and modify. Here are some key principles to follow.
+ok so the formatting I can use in these posts in pretty limited so this post serves as an exhaustive list of the things I can do. The following covers mostly the basic syntax, and maybe some additional things.
 
-## Understandable and Consistent Naming
+## Headings
 
-Good naming is crucial for readability.
+I only have access to h1 and h2. That's it.
 
-- **Variables**: Choose names that clearly describe their purpose.
-- **Functions**: Name them based on what they do. If a function retrieves a user, name it `getUser`.
+# This is Heading 1
+`# This is Heading 1`
 
+--- 
+
+## This is Heading 2
+`## This is Heading 2`
+
+---
+
+### This is Heading 3 ... wait a second
+`### This is Heading 3 ... wait a second`
+
+---
+
+## Emphasis
+
+There are two ways to add emphasis to words: **Bold** and *Italic*  
+
+ - `*Italic*` text is sorrounded by a single pair of asterisks
+ - `**Bold**` text is sorrounded by a souble pair of asterisks  
+
+&nbsp;
+
+You can also emphasize sections of text using:
+> Blockquotes
+
+- `> Blockquotes` are lines that begin with the closing
 > "Choosing good names takes time but saves more than it takes." - _Robert C. Martin_
 
 ## Keep Functions Small and Focused

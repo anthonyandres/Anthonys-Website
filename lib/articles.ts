@@ -82,9 +82,6 @@ export const getArticleData = async (id: string) => {
 
     const contentHtml = processedContent.toString() // process html to string
 
-    console.log("full path to article " + id + ": " + fullPath)
-    console.log("contentHTML: " + contentHtml)
-
     return{ // return object containing relevant information of the article where id is the article file name
         id,
         contentHtml,
