@@ -5,3 +5,5 @@ date: "17-10-2025"
 ---
 
 # Good to be here
+
+![Art](./assets/gif/couch.gif)

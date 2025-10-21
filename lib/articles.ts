@@ -78,11 +78,12 @@ export const getArticleData = async (id: string) => {
     const fullPath = path.join(articlesDirectory, `${id}.md`) // get path of article
     const fileContents = fs.readFileSync(fullPath, "utf-8") // get content of article from path
     const matterResult = matter(fileContents) // get data and content of article using matter
-    const processedContent = await remark() // process data as html
-        .use(html)
-        .process(matterResult.content)
+    const processedContent = await remark().use(html).process(matterResult.content)
 
     const contentHtml = processedContent.toString() // process html to string
+
+    console.log("full path to article " + id + ": " + fullPath)
+    console.log("contentHTML: " + contentHtml)
 
     return{ // return object containing relevant information of the article where id is the article file name
         id,

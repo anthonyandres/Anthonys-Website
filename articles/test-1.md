@@ -6,6 +6,8 @@ date: "19-10-2025"
 
 # How to Write Clean Code
 
+![Art](./anthony.jpg)
+
 Writing clean code is an essential skill for any developer. It not only makes your code more readable and maintainable but also makes it easier for others (and future you) to understand and modify. Here are some key principles to follow.
 
 ## Understandable and Consistent Naming

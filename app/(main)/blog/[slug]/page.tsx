@@ -11,8 +11,8 @@ export async function generateStaticParams(){
 
 export default async function Article({params}: {params: Promise<{slug: string}>}){
     const articleData = await getArticleData((await params).slug) // get article data based off of the url which is the id/name of the article file
-    console.log("array of articles: " + getArticleSlugs())
-    console.log("slug: " + (await params).slug)
+    // console.log("array of articles: " + getArticleSlugs())
+    // console.log("slug: " + (await params).slug)
 
     return(
         <div className="border-0 h-full w-full">

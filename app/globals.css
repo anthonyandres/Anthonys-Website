@@ -118,6 +118,10 @@
   @apply pl-5 italic border-l-2;
 }
 
+.article > p > img {
+  @apply w-1/2 mx-auto;
+}
+
 .blog-colors {
     border-color: var(--border-color);
     /* border-width: 2px; */
