@@ -12,6 +12,15 @@ interface Props{
 
 function LinksWindow({showBlog = () => {}}: Props) {
 
+  const excited = new Howl({
+    src: ['./sounds/UI_Decide.wav'],
+    volume: 0.75
+  })
+
+  function onBlogClick(){
+    excited.play();
+  }
+
   return (
     <div className='window-colors prevent-select h-[100%] w-[20vw] min-w-[300px] max-w-[300px] border-0 rounded-[0px]'>
         <IconContext.Provider value={{ className: 'tertiary-window-colors justify-right border-0 size-[20px] transition duration-100 ease-in hover:scale-[110%]' }}>
@@ -27,7 +36,7 @@ function LinksWindow({showBlog = () => {}}: Props) {
                 <div className='border-0 flex justify-center items-center h-full'>
                     <ScaleIconSilent>
                     
-                      <Link href="/blog">
+                      <Link href="/blog" onClick={onBlogClick}>
                       <IconContext.Provider value={{className: 'size-[120px]'}}> 
                         <SlSpeech />
                         </IconContext.Provider>

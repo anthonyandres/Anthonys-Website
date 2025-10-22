@@ -14,7 +14,7 @@ const ArticleListItem = ({category, articles}: Props) => {
             <h2 className="text-4xl">{category}</h2>
                 <div className="border-0 w-full items-center flex flex-col gap-2.5 text-lg">
                     {articles.map(async (article, id) => 
-                        <Link href={`blog/${article.id}`} key={id} className={`flex transition duration-150 hover:text-[#e69e41]`}>
+                        <Link href={`blog/${article.id}`} key={id} className={`flex transition duration-150 hover:text-(--secondary-text-color)`}>
                             <p>{article.title}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                             <p className="gelicaLight italic">{await (await getArticleData(article.id)).date.toString()}</p>
                         </Link>
