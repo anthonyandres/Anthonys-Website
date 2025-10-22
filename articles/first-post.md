@@ -1,7 +1,7 @@
 ---
 title: "And so it begins"
 category: "rambling"
-date: "21-10-2025"
+date: "19-10-2025"
 ---
 
 # Good to be here

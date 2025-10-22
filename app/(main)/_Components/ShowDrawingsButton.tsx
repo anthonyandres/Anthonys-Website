@@ -54,15 +54,15 @@ function ShowDrawingsButton(){
     return(
         <div>
             <IconContext.Provider value={{ className: 'tertiary-window-colors border-0 size-10 transition duration-100 ease-in hover:scale-[110%] ml-7 mt-4' }}>
-                <div className='border-0 absolute ml-28'>
+                <div className=' border-0 absolute ml-28'>
                     <FaPaintbrush onClick={onShowDrawingsClick}/>
                 </div>
             </IconContext.Provider>
             <div>
             {showDrawings &&
                     <div className=' pointer-events-none'>
-                        <img className='absolute bottom-[50vh] translate-y-[50vh] -left-10 w-[600px]' src={'./assets/gif/girlies.gif'} alt='loading...' draggable={false} />
-                        <img className='absolute bottom-0 right-0 w-[530px] scale-x-[100%]' src={'./assets/gif/doodle.gif'} alt='loading...' draggable={false} />
+                        <img className='z-0 absolute bottom-[50vh] translate-y-[50vh] -left-10 w-[600px]' src={'./assets/gif/girlies.gif'} alt='loading...' draggable={false} />
+                        <img className='z-0 absolute bottom-0 right-0 w-[530px] scale-x-[100%]' src={'./assets/gif/doodle.gif'} alt='loading...' draggable={false} />
                     </div>
             }
             </div>

@@ -58,6 +58,7 @@
   --window-background-color: #f7f4db;
   --scrollbar-color: #e0dec7;
   --bgbg-color: #d1cca366;
+  --article-list-background-color: #414141;
   /* --content-background-color: #fff7ec;
   --sidebar-background-color: #fff7ec; */
 
@@ -115,11 +116,24 @@
 }
 
 .article > blockquote {
-  @apply pl-5 italic border-l-2;
+  @apply pl-5 italic border-l-3 rounded-e-4xl p-4;
+  background: #00000030;
 }
 
 .article > p > img {
-  @apply w-1/2 mx-auto;
+  @apply w-3/4 mx-auto border-12 rounded-xl;
+}
+
+.article > p > a:hover {
+  color: var(--secondary-text-color);
+}
+
+.article > p > a {
+  transition-duration: 50ms;
+}
+
+.article-list-colors{
+  background: var(--article-list-background-color);
 }
 
 .blog-colors {
@@ -241,6 +255,7 @@ h1+h1 {
   --window-background-color: #282a36;
   --scrollbar-color: #1d1e27;
   --bgbg-color: #767a8f66;
+  --article-list-background-color: #303241;
 }
 
 /*Chrome*/

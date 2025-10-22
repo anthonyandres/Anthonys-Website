@@ -1,18 +1,7 @@
 import Link from "next/link";
 import type { ArticleItem } from "@/types";
-import localFont from "next/font/local";
+import { getArticleData } from "@/lib/articles";
 
-const gelica = localFont({
-    src: '../../../public/Fonts/Gelica/Gelica-Regular.otf',
-})
-
-const gelicaBold = localFont({
-    src: '../../../public/Fonts/Gelica/Gelica-Bold.otf',
-})
-
-const gelicaLight = localFont({
-    src: '../../../public/Fonts/Gelica/Gelica-Light.otf',
-})
 interface Props{
     category: string
     articles: ArticleItem[]
@@ -21,12 +10,13 @@ interface Props{
 const ArticleListItem = ({category, articles}: Props) => {
 
     return(
-        <div className={`border-0 blog-colors flex items-center flex-col gap-5 transition duration-150`}>
+        <div className={`z-1 border-4 rounded-2xl p-10 blog-colors flex items-center flex-col gap-5 article-list-colors`}>
             <h2 className="text-4xl">{category}</h2>
-                <div className="flex flex-col gap-2.5 text-lg">
-                    {articles.map((article, id) => 
-                        <Link href={`blog/${article.id}`} key={id} className={`hover:text-amber`}>
-                            {article.title}
+                <div className="border-0 w-full items-center flex flex-col gap-2.5 text-lg">
+                    {articles.map(async (article, id) => 
+                        <Link href={`blog/${article.id}`} key={id} className={`flex transition duration-150 hover:text-[#e69e41]`}>
+                            <p>{article.title}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                            <p className="gelicaLight italic">{await (await getArticleData(article.id)).date.toString()}</p>
                         </Link>
                     )}
                 </div>

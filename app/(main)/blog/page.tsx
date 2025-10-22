@@ -13,10 +13,11 @@ const BlogPage = () => {
     return(
         <div className="border-0 h-full w-full">
             <DarkMuteVolumeComponents>
+            
             <ShowDrawingsButton />
-            <section className={`border-0 h-full mx-auto w-7/12 blog-colors pt-20 mb-20 gelicaBold blog-colors transition duration-150`}>
+            <section className={`z-1 border-0 h-full mx-auto w-7/12 blog-colors pt-20 mb-20 gelicaBold blog-colors transition duration-150`}>
                 <div className="border-0 h-full w-full">
-                    <div className="border-0 translate-x-40 gelicaItalic">
+                    <div className="border-0 translate-x-0 gelicaItalic">
                         <Link href={"/home"} className=" place-items-center flex">
                             <IoArrowUndo />
                             <p>back to home</p>
