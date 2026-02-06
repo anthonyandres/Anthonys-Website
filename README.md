@@ -1,6 +1,8 @@
 # Description
 [This](https://anthonyandres.github.io/Anthonys-Website/) is my personal website. It's a straightforward project that uses Next.js and React. I've created various [compoenents](https://github.com/anthonyandres/Anthonys-Website/tree/master/app/(main)/_Components) for React's component based architecture that allow me to better organize my actual web pages. For instance, on the [home](https://github.com/anthonyandres/Anthonys-Website/blob/master/app/(main)/home/page.tsx) page, a majority of the HTML are just the imported components. Webpages are organized using next.js' [file-system based routing](https://nextjs.org/docs/app/getting-started/layouts-and-pages); Folders and files are used to define url routes.
 
+![websiteDemo](./websiteDemo.gif)
+
 ### Features
 * Interactable "windows" and pictures you can drag or minimize
 * Haptic feedback through the use of perspective shifts or sound cues
