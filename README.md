@@ -40,7 +40,7 @@ What allowed me to do these things was the \<motion /> component from the [frame
 
 ---
 
-In order for the Card.tsx component to not be dragged off screen, it must be passed the ref of the component that defines its bounding box. In this case, the <Card /> element is nested inside some other element <div /> with which its ref is passed to the Card component
+In order for the Card.tsx component to not be dragged off screen, it must be passed the ref of the component that defines its bounding box. In this case, the \<Card /> element is nested inside some other element, \<div />, with which its ref is passed to the Card component
 
     <div ref={boundingRef}>
         <Card boundingRef={boundingRef} />
@@ -92,7 +92,7 @@ The above code showcases the Card.tsx component's main function which takes a re
 
 The above code showcases the returned HTML of the Card component. notable attributes of the motion.div element include: whileDrag, whileHover, whileTap, onMouseMove, and onMouseLeave. These attributes dictate how the Card component acts when a user clicks down then moves the mouse (drag), has the mouse over the component (hover), clicks down without moving the mouse (tap), as well as what happens when the mouse moves over the component (mouse move and mouse leave).
 
-Another important attribute of the <motion.div /> element is the _style_ attribute. Specifically, the rotateX, rotateY, x, and rotate properties. These are [_MotionValues_](https://motion.dev/docs/react-motion-value) that would usually be automatically generated when used, but I manually created these in order for me to dictate how they function.
+Another important attribute of the \<motion.div /> element is the _style_ attribute. Specifically, the rotateX, rotateY, x, and rotate properties. These are [_MotionValues_](https://motion.dev/docs/react-motion-value) that would usually be automatically generated when used, but I manually created these in order for me to dictate how they function.
 
     const x = useMotionValue(0)
     const xVelocity = useVelocity(x) // calculate the change in position of the x axis
