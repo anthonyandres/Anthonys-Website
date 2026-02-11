@@ -27,7 +27,6 @@ In this section I will explain the various relevant files that contribute to the
 ## [Components](https://github.com/anthonyandres/Anthonys-Website/tree/master/app/(main)/_Components)
 _Excerpt from [W3 Schools' page](https://www.w3schools.com/react/react_components.asp) on React Components:_
 > Components are independent and reusable bits of code. They serve the same purpose as JavaScript functions, but work in isolation and return HTML.
-> Components come in two types, Class components and Function components, in this tutorial we will concentrate on Function components
 
 
 ### [Card.tsx](https://github.com/anthonyandres/Anthonys-Website/blob/master/app/(main)/_Components/Card.tsx)
