@@ -40,7 +40,7 @@ What allowed me to do these things was the \<motion /> component from the [frame
 
 ---
 
-In order for the Card.tsx component to not be dragged off screen, it must be passed the ref of the component that defines its bounding box. In this case, the <Card /> element is nested inside some other element, <div />, with which its ref is passed to the Card component
+In order for the Card.tsx component to not be dragged off screen, it must be passed the ref of the component that defines its bounding box. In this case, the <Card /> element is nested inside some other element <div /> with which its ref is passed to the Card component
 
     <div ref={boundingRef}>
         <Card boundingRef={boundingRef} />
