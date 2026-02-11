@@ -112,7 +112,7 @@ Another important attribute of the <motion.div /> element is the _style_ attribu
 
 In the above code, I manually create the motion value _x_ which is passed to the motion.div element via the Style attribute. This means any further use of the x variable is referencing the x position of the motion.div element. I can then calculate the velocity of the motion.div element using useVelocity(x). This velocity is mapped to a 'spring animation' using useSpring(xVelocity, ... ). This essentially makes the integer value oscillate as a spring with damping would. 
 
-Then, the now 'spring' velocity of the card is mapped to its rotation; The faster the card moves, the more it will rotate in response. This is done using the useTransform( ... ) function. Any velocity values between -6000 and 6000 are turned into -60 and 60 (in this case degress of rotation) respectively. These values are assigned to the variable _rotate_, then it is passed to the motion.div element via the Style attribute which will allow the Card component to-- well... rotate.
+Then, the now 'spring' velocity of the card is mapped to its rotation; The faster the card moves, the more it will rotate in response. This is done using the useTransform( ... ) function. Any velocity values between -6000 and 6000 are turned into -60 and 60 (in this case degress of rotation) respectively. These values are assigned to the variable _rotate_, then it is passed to the motion.div element via the Style attribute which will allow the Card component to rotate in proportion to its x velocity.
 
     
 _**todo: explain more of the Card component: x2, y2, rotateX and rotateY**_
