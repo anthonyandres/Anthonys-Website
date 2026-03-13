@@ -1,40 +1,21 @@
 //'use client'
 
-import React, { PropsWithChildren, RefObject } from 'react'
+import React, { PropsWithChildren } from 'react'
 import { motion, useMotionValue, useSpring, useTransform, useVelocity } from 'framer-motion'
 import { Howl } from 'howler'
 
 interface Props {
-    boundingRef: RefObject<null> | undefined;
     imgSrc: string
-    //zIndex: number
 }
 
-const angle = 10 // set the "angle" of tilt, higher is more crazy
+const angle = 12 // set the "angle" of tile, higher is more crazy
 
-function Card({boundingRef, imgSrc}: PropsWithChildren<Props>) { // 'Card' takes a reference to a DivElement, and uses that as a bounds
+function TiltCardMobile({imgSrc}: PropsWithChildren<Props>) { // 'Card' takes a reference to a DivElement, and uses that as a bounds
     const x = useMotionValue(0)
     const xVelocity = useVelocity(x) // calculate the change in position of the x axis
-    const xVelSpring = useSpring(xVelocity, {stiffness: 1000,
-                                             damping: 30}) // dampen any acceleration
-    // const cardHover = new Howl({
-    //     src: ['./sounds/CARD_TAP_01.wav'],
-    //     volume: 0.3
-    // })
-    const cardUp = new Howl({
-        src: ['./sounds/Card_Drag.wav'],
-        volume: 0.9
-    })
-    // const cardDown = new Howl({
-    //     src: ['./sounds/CARD_PLACE_01.wav'],
-    //     volume: 0.3
-    // })
-
-    const cardSound = new Howl({
-        src: ['./sounds/Card_on_Card_8.wav' ],
-        volume: 1.5
-    })
-
+    const xVelSpring = useSpring(xVelocity, {stiffness: 1000, damping: 30}) // dampen any acceleration
+    const springScale = useSpring(1, {stiffness: 4000, damping: 30});
+    
     const rotate = useTransform( // use the dampened speed values and map them to workable values for rotation (I don't want the card to rotate 16000 degrees if I move it so I map it to 70 degrees in either direction)
         xVelSpring,
         [-6000, 0, 6000],
@@ -46,9 +27,8 @@ function Card({boundingRef, imgSrc}: PropsWithChildren<Props>) { // 'Card' takes
     const rotateX = useTransform(y2, [-0.5, 0.5], [`${angle}deg`, `-${angle}deg`]) //handleMouseMove() determines x2 and y2, which are used here to calculate tilt
     const rotateY = useTransform(x2, [-0.5, 0.5], [`-${angle}deg`, `${angle}deg`])
 
-
     const handleMouseMove = (e: any) => {// calculate various measurements in order to obtain the x/y rotational values for tilting
-        //console.log('mouse move!')
+        console.log('mouse move!')
         const rect = e.target.getBoundingClientRect();
 
         const width = rect.width;
@@ -68,24 +48,41 @@ function Card({boundingRef, imgSrc}: PropsWithChildren<Props>) { // 'Card' takes
     const handleMouseLeave = () => {// set rotation values back to 0, in other words, reset tilt
         x2.set(0);
         y2.set(0);
-        //cardDown.play()
-    }
-    const handleHoverStart = () => {
-        console.log('hover start!')
-        //cardHover.play()
-
     }
 
+    
 
+    const sound1 = new Howl({
+        src: ['./sounds/Obj_Fall_Leaf_1.wav'],
+        volume: 0.9
+    })
+    const sound2 = new Howl({
+        src: ['./sounds/Obj_Fall_Leaf_2.wav'],
+        volume: 0.9
+    })
+    const sound3 = new Howl({
+        src: ['./sounds/Obj_Fall_Leaf_3.wav'],
+        volume: 0.9
+    })
 
-    const handleDrag = () => {
-        cardUp.play()
+    function handleRandomSound(){
+        const choice = Math.floor(Math.random() * 3)
+        console.log(choice)
+        switch(choice){
+            case 0: 
+                sound1.play()
+                break
+            case 1: 
+                sound2.play()
+                break
+            case 2: 
+                sound3.play()
+                break
+            default: console.log('no sound?')
+        }
     }
-    const handleDragEnd = () => {
-        cardSound.play()
-    }
 
-    const springScale = useSpring(1, {stiffness: 4000, damping: 30});
+
 
     return(
         <main   style={{
@@ -102,37 +99,29 @@ function Card({boundingRef, imgSrc}: PropsWithChildren<Props>) { // 'Card' takes
                     relative
                     inset-0 
                     min-w-min 
-                    z-1 
+                    -z-10 
                     pointer-events-auto'>
         {/* <span style={{perspective: 800, border: '5px solid white', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}} className='inset-0 min-w-min -z-10 pointer-events-auto'> */}
         <motion.div
-            className='z-1 drag-elements flex flex-col overflow-hidden group'
-            drag                                                                        // enable drag
-            dragSnapToOrigin={false}
-            dragConstraints={boundingRef}                                               // set bounding area
-            whileDrag={{boxShadow: "12px 16px 2px rgba(0, 0, 0, 0.466)"}}               // while drag enable boxshadow: offset x, y, blur radius
-            whileHover={{scale: 1.04, boxShadow: "7px 7px 1px rgba(0, 0, 0, 0.466)"}}   // while hovering, scale and enable boxshadow
-            whileTap={{ scale: 1.14, boxShadow: "12px 16px 2px rgba(0, 0, 0, 0.466)" }} // while clicking on, scale increase and box shadow enable
+            className=' flex flex-col overflow-hidden group'
+            //whileHover={{scale: 1.07, boxShadow: "7px 7px 1px rgba(0, 0, 0, 0.466)"}}   // while hovering, scale and enable boxshadow
+            //whileTap={{ scale: 1.14, boxShadow: "12px 16px 2px rgba(0, 0, 0, 0.466)" }} // while clicking on, scale increase and box shadow enable
             dragElastic={0.25}                                                          // effects resistance to being outside bounding box, lower is more resistance
             dragMomentum={false}                                                        // effects movement after drag ends
             transition={{duration: 0.1, type: 'spring'}}                                // for all i know, all animations will follow this directive
             onMouseMove={handleMouseMove}                                               // when mouse moves on element, call this function
-            onMouseLeave={handleMouseLeave}                                             //  when mouse leaves element, call this function
-            //onMouseDown={updateZIndex}
-            onTapStart={handleDrag}
-            onHoverStart={handleHoverStart}
-            //onDragStart={handleDrag}
-            onDragEnd={handleDragEnd}                                           
+            onMouseLeave={handleMouseLeave}                                            //  when mouse leaves element, call this function     
+            whileHover={{scale: 1.04, boxShadow: "7px 7px 1px rgba(0, 0, 0, 0.466)"}}   // while hovering, scale and enable boxshadow
+            whileTap={{ scale: 1.07, boxShadow: "12px 16px 2px rgba(0, 0, 0, 0.466)" }}
+            onTapStart={handleRandomSound}                                      
             style={{
                     //boxShadow: "5px 5px 0px rgba(0, 0, 0, 0.466)",
-                    border: '2px solid #747474f5',
-                    minWidth: '180px',
-                    minHeight: '248px',
-                    maxWidth: '270px',
-                    maxHeight: '372px', 
-                    height: '19.2vw', 
-                    width: '14.34vw', 
-                    borderRadius: '10px', 
+                    border: '0px solid #747474f5',
+                    maxHeight: '170px',
+                    maxWidth: '170px',
+                    height: '30vw', 
+                    width: '30vw', //14.34 
+                    borderRadius: '150px', 
                     background:'white', 
                     display: 'flex', 
                     justifyContent: 'center', 
@@ -142,21 +131,19 @@ function Card({boundingRef, imgSrc}: PropsWithChildren<Props>) { // 'Card' takes
                     x, 
                     scale: springScale, 
                     rotate, 
-                    transformOrigin: "50% 25%"}} // set rotation point to upper middle area
+                    //transformOrigin: "50% 25%"
+                    }} // set rotation point to upper middle area
             >
-
             
             <img style={{   
-                            scale: '10vw', 
+                            scale: '1.1', 
                             height: '483px', //was 18.2vw //images used will be 783x1080
                             width: '350px', //was 13.34vw
-                            borderRadius: '10px', 
-                            border: '10px solid white', 
                             pointerEvents: 'none', 
                             display: 'flex', 
                             justifyContent: 'center', 
-                            alignItems: 'center'}} 
-                 className='m-2 object-cover w-3xs' 
+                            alignItems: 'center',
+                        translate: '0px 30px'}}  
                  src={imgSrc}>    
             </img>
         
@@ -166,4 +153,4 @@ function Card({boundingRef, imgSrc}: PropsWithChildren<Props>) { // 'Card' takes
     )
 }
 
-export default Card
+export default TiltCardMobile

@@ -5,6 +5,10 @@ import CardContainer from '../_Components/CardContainer'
 import WindowContainer from '../_Components/WindowContainer'
 import DarkMuteVolumeComponents from '../_Components/DarkMuteVolumeComponents'
 import { Metadata } from 'next'
+import MobileIconsMenu from '../_Components/MobileIconsMenu'
+import AboutMobile from '../_Components/Windows/AboutMobile'
+import MobileContainer from '../_Components/MobileContainer'
+import DarkMuteVolumeComponentsMobile from '../_Components/DarkMuteVolumeComponentsMobile'
 
 export const metadata: Metadata = {
   title: "Anthony's Website",
@@ -45,8 +49,11 @@ function Page() {
             </div>
           </DarkMuteVolumeComponents>
         </div>
-        <div className='flex justify-center items-center h-full md:hidden'>
-          TODO: add mobile layout here. if you are on your phone, enable desktop mode! (if you see this, you owe me 5 Canadian Dollars)
+        <div className='flex justify-center items-center h-full sm:inline md:hidden overflow-hidden'>
+          <DarkMuteVolumeComponentsMobile>
+            <MobileContainer />
+            {/* <MobileIconsMenu /> */}
+          </DarkMuteVolumeComponentsMobile>      
         </div>
       </main>
   )

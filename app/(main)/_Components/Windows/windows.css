@@ -9,6 +9,11 @@
   src: url('../../../../public/Fonts/CabinetGrotesk/CabinetGrotesk-Medium.otf')
 }
 
+.mobile-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .window-colors {
     border-color: var(--border-color);
     /* border-width: 2px; */
@@ -27,6 +32,10 @@
 .bgbg{
   background: var(--bgbg-color);
   color: var(--primary-text-color);
+}
+
+.mobile-text-colors{
+  color: var(--primary-mobile-text-color)
 }
 
 .secondary-window-colors{
