@@ -46,7 +46,7 @@ function LinksMobile({showLinks = () => {}, height}: Props) {
                 </ScaleIcon>
 
                 <ScaleIcon>
-                    <div className='border-0 flex flex-col items-center' onClick={()=>openInNewTab('https://www.linkedin.com/in/anthony-andres-5599121b6/')}>
+                    <div className='border-0 flex flex-col items-center' onClick={()=>openInNewTab('https://www.linkedin.com/in/111anthony-andres/')}>
                         <FaLinkedin/>
                         <p className=''>LinkedIn </p>
                     </div>
