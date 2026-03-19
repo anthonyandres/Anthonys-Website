@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import './windows.css'
 import { IconContext } from 'react-icons'
 import {FaMinimize, FaRegFaceGrinTongue, FaRegFaceLaughWink, FaRegFaceMeh,  } from 'react-icons/fa6'
-import HoverSoundBox from '../../../../public/sounds/HoverSoundBox'
+import HoverSoundBox from '../HoverSoundBox'
 import ScaleIconSilent from '../ScaleIconSilent'
+import { motion, MotionConfig, spring, useSpring } from 'framer-motion'
 
 interface Props{
   showWork: ()=> void
@@ -13,6 +14,7 @@ interface Props{
 function WorkWindow({showWork = () => {}}: Props) {
   const [isProject, setIsPoject] = useState(false)
   const [isProjectClicked, setIsPojectClicked] = useState(false)
+  const springScale = useSpring(1, {stiffness: 1000, damping: 100});
 
   const openInNewTab = (url:string) => {
     const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
@@ -89,7 +91,9 @@ function WorkWindow({showWork = () => {}}: Props) {
             <hr className='mt-5 mb-2 window-colors border-2 rounded-2xl'/>
             <div>
               <h2 className={`text-[200%] secondary-window-colors gelicaBold`}>Projects</h2>
-              <p>most of my relevant technical projects done in school can be found on my GitHub, and projects I did outside of school can be found on my other page:</p>
+              <p>most of my relevant technical projects done in school can be found on my 
+                  <a href='https://github.com/anthonyandres' target='_blank' style={{color:"#e69e41"}}> GitHub</a>
+                , and projects I did outside of school can be found on my other page:</p>
               <p className='mt-5 text-[13px] text-center'>(its not that flashy, but I was lazy and still am lazy)</p>
               <div className='border-0 flex flex-col items-center' onClick={()=>projectClick()}>
                 <ScaleIconSilent>

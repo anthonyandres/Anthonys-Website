@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './windows.css'
 import { IconContext } from 'react-icons'
 import {FaMinimize, FaRegFaceGrinTongue, FaRegFaceLaughWink, FaRegFaceMeh,  } from 'react-icons/fa6'
-import HoverSoundBox from '../../../../public/sounds/HoverSoundBox'
+import HoverSoundBox from '../HoverSoundBox'
 import ScaleIconSilent from '../ScaleIconSilent'
 
 interface Props{
