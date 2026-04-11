@@ -4,6 +4,7 @@ import { IconContext } from 'react-icons'
 import {FaMinimize, FaRegFaceGrinTongue, FaRegFaceLaughWink, FaRegFaceMeh,  } from 'react-icons/fa6'
 import HoverSoundBox from '../HoverSoundBox'
 import ScaleIconSilent from '../ScaleIconSilent'
+import { vw } from 'framer-motion'
 
 interface Props{
   showWork: ()=> void;
@@ -49,7 +50,7 @@ function WorkMobile({showWork = () => {}, height}: Props) {
             <p>Here are a few things I&apos;m familiar with, as well as a few things I&apos;ve worked on...</p>
             <div className='grid grid-cols-2 grid-rows-1 border-0'>
               <div className='flex justify-left flex-col'>
-                <h2 className={`text-[200%] secondary-window-colors gelicaBold`}>Tools</h2>
+                <h2 className={`text-[6vw] secondary-window-colors gelicaBold`}>Tools</h2>
                 <div className='border-0 flex flex-wrap justify-center'>
                   <HoverSoundBox>GitHub</HoverSoundBox>
                   <HoverSoundBox>Kubernetes</HoverSoundBox>
@@ -69,7 +70,7 @@ function WorkMobile({showWork = () => {}, height}: Props) {
               </div>
                 
               <div className='flex justify-left flex-col'>
-                <h2 className={`text-[200%] secondary-window-colors gelicaBold`}>Development</h2>
+                <h2 className={`text-[6vw] secondary-window-colors gelicaBold`}>Development</h2>
                 <div className='border-0 flex flex-wrap justify-center'>
                   <HoverSoundBox>C</HoverSoundBox>
                   <HoverSoundBox>Java</HoverSoundBox>
@@ -89,12 +90,12 @@ function WorkMobile({showWork = () => {}, height}: Props) {
             </div>
             <hr className='mt-5 mb-2 window-colors border-2 rounded-2xl'/>
             <div>
-              <h2 className={`text-[200%] secondary-window-colors gelicaBold`}>Projects</h2>
+              <h2 className={`text-[6vw] secondary-window-colors gelicaBold`}>Projects</h2>
               <p>most of my relevant technical projects done in school can be found on my GitHub, and projects I did outside of school can be found on my other page:</p>
               <p className='mt-5 text-[13px] text-center'>(its not that flashy, but I was lazy and still am lazy)</p>
               <div className='border-0 flex flex-col items-center' onClick={()=>projectClick()}>
                 <ScaleIconSilent>
-                    <IconContext.Provider value={{ className: 'border-0 size-30 mb-3 mt-3' }}>
+                    <IconContext.Provider value={{ className: 'border-0 size-[20vw] mb-3 mt-3' }}>
                     {!isProject && <FaRegFaceMeh onMouseEnter={onProjectEnter} onMouseLeave={onProjectLeave} />}
                     {isProject && <FaRegFaceGrinTongue onMouseEnter={onProjectEnter} onMouseLeave={onProjectLeave} />}
                     </IconContext.Provider>

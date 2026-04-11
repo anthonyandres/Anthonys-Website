@@ -53,7 +53,7 @@ function ContactMobile({showContact = () => {}, height}: Props) {
                 <div className='text-center border-0 flex flex-col items-center'>
                     <ScaleIconSilent>
                     <button onClick={onEmailClick}>
-                        <IconContext.Provider value={{ className: 'border-0 size-[23vw] mt-0' }}>
+                        <IconContext.Provider value={{ className: 'border-0 size-[20vw] mt-0' }}>
                         {!isEmail && !isEmailClicked && <FaRegFaceMeh onMouseEnter={onEmailEnter} onMouseLeave={onEmailLeave} />}
                         {isEmail && !isEmailClicked && <FaRegFaceLaugh onMouseEnter={onEmailEnter} onMouseLeave={onEmailLeave} />}
                         {isEmailClicked && <FaRegFaceLaughWink/>}
