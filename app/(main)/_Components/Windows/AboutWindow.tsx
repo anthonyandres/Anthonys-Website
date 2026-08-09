@@ -33,8 +33,7 @@ function AboutWindow({showAbout = () => {}}: Props) {
                         <h2 className='secondary-window-colors text-3xl font-bold text-center'>Hey! I&#39;m Anthony, I am...</h2>
                             <div className={`window-colors gelicaLight`}>
                                 <ul className=' text-[20px] list-disc pl-10'>
-                                    <li>a recent Computer Engineering graduate</li>
-                                    <li>currently looking for work!</li>
+                                    <li>a 2025 Computer Engineering graduate</li>
                                     <li>open to gain new experiences and learn as much as I can in the industry</li>
                                 </ul>        
                             </div>
